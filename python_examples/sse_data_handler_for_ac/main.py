@@ -17,13 +17,14 @@ def stop(stream_thread):
 
 def main():
     stream_thread = None
-    access_token = "2e91e2e44910ff1005a3aa99554ccf618c15e091e03e66cd5c6122bbda12bb01"
-    mac_address = "CC:1B:E0:E0:90:B4"
-    url = "http://demo.cassia.pro/api/gap/nodes?event=1&mac=" + mac_address + "&access_token=" + access_token
+    access_token = "abcdefghijklmnopqrstuvwxyz"
+    mac_address = "CC:1B:E0:E0:12:AB"
+    ac_address = "http://demo.cassia.pro"
+    url = ac_address + "/api/gap/nodes?event=1&mac=" + mac_address + "&access_token=" + access_token
     output_file = open("example_output.txt", "a")
     start(stream_thread, url, output_file)
     print("Collecting and processing packet data for 10 seconds.")
-    time.sleep(30)
+    time.sleep(10)
     stop(stream_thread)
 
 
