@@ -1,6 +1,13 @@
 import time
 from sse_data_thread import SSEDataThread
 
+"""
+SSE Stream Handler for Scanned Advertisement Data Packets using AC Managed Mode.
+
+This is an example program to collect SSE scanned advertisement data from the AC API 
+and process the adData from the packet JSON.
+"""
+
 def start(stream_thread, url, output_file):
     """Starts streaming and processing scores data."""
     stream_thread = SSEDataThread(url, output_file)

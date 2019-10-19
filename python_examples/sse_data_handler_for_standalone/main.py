@@ -4,7 +4,7 @@ from sse_data_thread import SSEDataThread
 """
 SSE Stream Handler for Scanned Advertisement Data Packets using Standalone Mode
 
-This is an example program to collect SSE scanned advertisement data from the AC 
+This is an example program to collect SSE scanned advertisement data from the router API 
 and process the adData from the packet JSON.
 """
 
