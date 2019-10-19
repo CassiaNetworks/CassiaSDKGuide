@@ -38,12 +38,12 @@ class SSEDataThread(threading.Thread):
                 self._outfile.write(event_json["adData"] + "\n")
 
     def _stream_threader(self):
-        """Function to run on each new ScoreStreamThread."""
+        """Function to run on each new SSEDataThread."""
         client_events = sseclient.SSEClient(self._url)
         self._stream_and_collect_packet_addata(client_events)
 
     def stop(self):
-        """Stops ScoreStreamThread by setting kill Event flag."""
+        """Stops SSEDataThread by setting kill Event flag."""
         if not self._kill.is_set():
             self._kill.set()
         self._outfile.close()
