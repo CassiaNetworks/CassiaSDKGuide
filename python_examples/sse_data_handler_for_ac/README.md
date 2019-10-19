@@ -5,7 +5,7 @@ Please make sure to run:
 pip install -r requirements.txt
 
 
-## Obtaining the access_token for API Requests
+## Obtaining the access_token for AC RESTful API Requests
 Since the Cassia RESTful API on AC Managed Mode requires communication to the AC, an access_token is needed per API call.
 
 Please follow the instructions in this following link to generate an access_token: <br>
