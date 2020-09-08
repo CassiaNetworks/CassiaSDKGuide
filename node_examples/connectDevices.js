@@ -6,7 +6,6 @@
 const request = require('request');
 const EventSource = require('eventsource');
 const qs = require('querystring');
-const { deepEqual } = require('assert');
 
 /*
  * replace it with your AC address
