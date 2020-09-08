@@ -69,22 +69,22 @@ function openScanSse(routerMac, token) {
   const url = `${AC_HOST}/gap/nodes?event=1&${qs.encode(query)}`;
   const sse = new EventSource(url);
 
-  sse.onerror = function(error) {
-    console.log('open notify sse failed:', error);
-  };
+  sse.on('error', function(error) {
+    console.error('open notify sse failed:', error);
+  });
   
   /*
    * if scan open successful, it will return
    * data: {"bdaddrs":[{"bdaddr":"ED:47:B0:D3:A9:C8","bdaddrType":"public"}],"scanData":"0C09536C656570616365205A32","name":"Sleepace Z2","rssi":-37,"evt_type":4}
    */
-   sse.onmessage = function(message) {
+   sse.on('message', function(message) {
     let data = JSON.parse(message.data);
     let deviceMac = data.bdaddrs[0].bdaddr;
     let addrType = data.bdaddrs[0].bdaddrType;
     let name = data.name;
     let rssi = data.rssi;
     console.log(`scanned device: ${deviceMac}, ${addrType}, ${rssi}, ${name}`);
-  };
+  });
 }
 
 (async () => {
