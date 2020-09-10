@@ -70,7 +70,7 @@ function openScanSse(routerMac, token) {
   const sse = new EventSource(url);
 
   sse.on('error', function(error) {
-    console.error('open notify sse failed:', error);
+    console.error('open scan sse failed:', error);
   });
   
   /*
