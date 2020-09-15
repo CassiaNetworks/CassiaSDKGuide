@@ -1,0 +1,29 @@
+{
+  "name": "cassia_restful_examples",
+  "version": "1.0.0",
+  "description": "some examples for Cassia RESTful APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CassiaNetworks/CassiaSDKGuide.git"
+  },
+  "keywords": [
+    "cassia",
+    "sdk",
+    "examples",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CassiaNetworks/CassiaSDKGuide/issues"
+  },
+  "homepage": "https://github.com/CassiaNetworks/CassiaSDKGuide#readme",
+  "dependencies": {
+    "eventsource": "^1.0.7",
+    "request": "^2.88.2"
+  }
+}
