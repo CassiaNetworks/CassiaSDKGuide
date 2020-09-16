@@ -47,7 +47,7 @@ setup(
             'cassiatidemo=cassiatidemo:main',
         ],
     },
-    project_urls={  # Optional
+    project_urls={
         'Bug Reports': 'https://www.cassianetworks.com/support',
         'Products': 'https://www.cassianetworks.com/products',
         'Contact Us': 'https://www.cassianetworks.com/contact-us',
