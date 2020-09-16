@@ -16,7 +16,41 @@ setup(
     long_description=readme,
     author='Kevin Yang',
     author_email='kevin@cassianetworks.us',
-    url='',
+    classifiers=[
+        # How mature is this project?
+        #   1 - Planning
+        #   2 - Pre-Alpha
+        #   3 - Alpha
+        #   4 - Beta
+        #   5 - Production/Stable
+        'Development Status :: 2 - Pre-Alpha',
+
+        'Intended Audience :: Developers',
+        'Topic :: Software Development',
+
+        'License :: OSI Approved :: MIT License',
+
+        'Programming Language :: Python :: 3.8'
+    ],
+    keywords='sample, setuptools, development',
+    package_dir={'': 'src'},
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    python_requires='>=3.8, <4',
+    install_requires=['pytest', 'sphinx'],
+    extras_require={
+        'dev': ['check-manifest'],
+        'test': ['coverage'],
+    },
+    entry_points={
+        'console_scripts': [
+            'cassiatidemo=cassiatidemo:main',
+        ],
+    },
+    project_urls={  # Optional
+        'Bug Reports': 'https://www.cassianetworks.com/support',
+        'Products': 'https://www.cassianetworks.com/products',
+        'Contact Us': 'https://www.cassianetworks.com/contact-us',
+        'Source': 'https://github.com/CassiaNetworks/CassiaSDKGuide/tree/master/python_examples/', # TODO: Edit this once project is fully uploaded on master branch!
+    },
 )
