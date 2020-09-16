@@ -10,9 +10,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='TI SensorTag CC2650STK Container App Example (Python) - Scan, Connect, Read, and Store',
+    name=('TI SensorTag CC2650STK Container App Example (Python) '
+          '- Scan, Connect, Read, and Store'),
     version='0.1.0',
-    description='This Python application is an example Cassia router container app that shows how to scan, connect, and read data from the TI SensorTag CC2650STK and store it on the Cassia router container storage.',
+    description=('This Python application is an example Cassia router '
+                 'container app that shows how to scan, connect, and read '
+                 'data from the TI SensorTag CC2650STK and store it on the '
+                 'Cassia router container storage.'),
     long_description=readme,
     author='Kevin Yang',
     author_email='kevin@cassianetworks.us',
@@ -51,6 +55,8 @@ setup(
         'Bug Reports': 'https://www.cassianetworks.com/support',
         'Products': 'https://www.cassianetworks.com/products',
         'Contact Us': 'https://www.cassianetworks.com/contact-us',
-        'Source': 'https://github.com/CassiaNetworks/CassiaSDKGuide/tree/master/python_examples/', # TODO: Edit this once project is fully uploaded on master branch!
+        # TODO: Edit Source once project is fully uploaded on master branch!
+        'Source': ('https://github.com/CassiaNetworks/CassiaSDKGuide/tree'
+                   '/master/python_examples/'),
     },
 )
