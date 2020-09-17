@@ -9,8 +9,7 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name=('TI SensorTag CC2650STK Container App Example (Python) '
-          '- Scan, Connect, Read, and Store'),
+    name=('cassia-container-ti-sensortag-example'),
     version='0.1.0',
     description=('This Python application is an example Cassia router '
                  'container app that shows how to scan, connect, and read '
