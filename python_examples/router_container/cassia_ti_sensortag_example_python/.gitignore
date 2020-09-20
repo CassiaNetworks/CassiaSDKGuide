@@ -91,3 +91,5 @@ ENV/
 
 # Directory to store data from application
 data/
+
+.DS_Store
