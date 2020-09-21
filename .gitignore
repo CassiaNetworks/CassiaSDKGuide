@@ -1,0 +1,11 @@
+# Windows thumbnail db
+Thumbs.db
+
+# Windows desktop.ini
+desktop.ini
+
+# OSX files
+.DS_Store
+
+# Log files
+*.log

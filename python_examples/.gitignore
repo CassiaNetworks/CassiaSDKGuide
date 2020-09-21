@@ -56,5 +56,14 @@ docs/_build/
 # PyBuilder
 target/
 
+# Windows thumbnail db
+Thumbs.db
+
+# Windows desktop.ini
+desktop.ini
+
+# OSX files
+.DS_Store
+
 # Output Example File
 example_output.txt
