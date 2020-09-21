@@ -34,7 +34,7 @@ setup(
 
         'Programming Language :: Python :: 3.8'
     ],
-    keywords='sample, setuptools, development',
+    keywords='cassia networks, cassia, ti, sensortag',
     package_dir={'': 'src'},
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
