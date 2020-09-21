@@ -9,12 +9,10 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name=('cassia-container-ti-sensortag-example'),
+    name=('cassiadevtools'),
     version='0.1.0',
-    description=('This Python application is an example Cassia router '
-                 'container app that shows how to scan, connect, and read '
-                 'data from the TI SensorTag CC2650STK and store it on the '
-                 'Cassia router container storage.'),
+    description=('This Python package contains modules that might be '
+                 'handy when developing with the Cassia SDK RESTful API.'),
     long_description=readme,
     author='Kevin Yang',
     author_email='kevin@cassianetworks.us',
@@ -34,19 +32,22 @@ setup(
 
         'Programming Language :: Python :: 3.8'
     ],
-    keywords='cassia networks, cassia, ti, sensortag',
+    keywords=('cassia networks, cassia, cassia sdk restful api, cassia sdk,'
+              'cassia restful, cassia restful api, cassia sdk api, cassia api'
+              'cassia dev tools, cassia tools, cassiadevtools'),
     package_dir={'': 'src'},
     license=license,
-    packages=find_packages(exclude=('tests', 'docs')),
+    packages=find_packages(where='src'),
     python_requires='>=3.8, <4',
-    install_requires=['pytest', 'sphinx'],
+    install_requires=['pytest', 'sphinx', 'click'],
     extras_require={
         'dev': ['check-manifest'],
         'test': ['coverage'],
     },
     entry_points={
         'console_scripts': [
-            'cassiatidemo=cassiatidemo:main',
+            ('container_ti_sensortag_example='
+             'cassiadevtools.scripts.container_ti_sensortag_example:main'),
         ],
     },
     project_urls={
@@ -55,6 +56,6 @@ setup(
         'Contact Us': 'https://www.cassianetworks.com/contact-us',
         # TODO: Edit Source once project is fully uploaded on master branch!
         'Source': ('https://github.com/CassiaNetworks/CassiaSDKGuide/tree'
-                   '/master/python_examples/'),
+                   '/master/python_examples'),
     },
 )
