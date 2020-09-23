@@ -173,7 +173,7 @@ async function processQueue(token) {
 (async () => {
   try {
     let authInfo = await auth(DEVELOPER_KEY, DEVELOPER_SECRET);
-    let token = authInfo = authInfo.access_token;
+    let token = authInfo.access_token;
     openScanSse(ROUTER_MAC, token);
     processQueue(token);
   } catch(ex) {
