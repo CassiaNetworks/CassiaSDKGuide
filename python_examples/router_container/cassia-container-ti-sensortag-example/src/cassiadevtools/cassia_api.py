@@ -32,6 +32,8 @@ class CassiaApi:
             self.api_type = api_type
 
         self.api_domain = api_domain
+        #  TODO: make local variables using __
+        #self.
 
     def scan(self):
         print('scan')
