@@ -39,7 +39,7 @@ setup(
     license=license,
     packages=find_packages(where='src'),
     python_requires='>=3.8, <4',
-    install_requires=['pytest', 'sphinx', 'click'],
+    install_requires=['pytest==6.0.2', 'sphinx==3.2.1', 'click==7.1.2', 'aiohttp-sse-client==0.1.7'],
     extras_require={
         'dev': ['check-manifest'],
         'test': ['coverage'],

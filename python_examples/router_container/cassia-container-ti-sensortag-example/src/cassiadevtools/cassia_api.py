@@ -13,6 +13,7 @@ TODO: Add more Cassia RESTful API methods.
 """
 
 from enum import Enum
+from aiohttp_sse_client import client as sse_client
 
 class CassiaApi:
     CONTAINER_ADDRESS = "10.10.10.254";
@@ -32,12 +33,17 @@ class CassiaApi:
             self.api_type = api_type
 
         self.api_domain = api_domain
-        #  TODO: make local variables using __
-        #self.
+        self.__is_sse_scan = False
+        self.__is_sse_notify = False
+        self.__ac_access_token = ''
 
     def scan(self):
-        print('scan')
-        pass
+        async with sse_client.EventSource(self.api_domain) as event_source:
+            try:
+                async for event in event_source:
+                    print(event)
+            except ConnectionError as e:
+                print(e)
 
     def connect(self):
         print('connect')
