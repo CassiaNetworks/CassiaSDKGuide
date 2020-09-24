@@ -1,7 +1,7 @@
 """This module contains a class that interfaces with the Cassia RESTful API.
 
 The CassiaApi class contains methods that interface with the
-Cassia RESTful API for the container, rouer, and AC.
+Cassia RESTful API for the container, router, and AC.
 
   The api_type parameter
 
