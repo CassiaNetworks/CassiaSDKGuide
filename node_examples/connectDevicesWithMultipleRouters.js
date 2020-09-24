@@ -47,8 +47,9 @@ function getAllRouters(token) {
 
 /*
  * since Router can only connect one device at one time, or it will return "chip busy" error
- * so we need a queue to connect devices sequentially
- * and prevent same device to enter queue
+ * so we need a queue to connect devices sequentially, and prevent same device to enter queue
+ * To improve efficiency, it is recommended to have one queue for each router when you have more than 10 routers. 
+ * you can use job queue lib like bull or bee for nodejs
  */
 function queue() {
   let q = [];
