@@ -1,6 +1,6 @@
 # CassiaSDKGuide
 
-| User  Cases                                                  | API        | Sample Code -  Node.js               |
+| User  Cases                                                  | API        | Sample Code                          |
 | ------------------------------------------------------------ | ---------- | ------------------------------------ |
 | Scan  devices from one router                                | Through AC | acScan.js                            |
 | Scan,  connect and get notification for one devices          | Through AC | acNotify.js                          |
