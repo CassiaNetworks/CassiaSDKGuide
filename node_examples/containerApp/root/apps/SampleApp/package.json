@@ -1,0 +1,16 @@
+{
+  "name": "container-sample",
+  "version": "1.0.0",
+  "description": "cassia container sample app",
+  "main": "index.js",
+  "dependencies": {
+    "co": "^4.6.0",
+    "node-cassia-sdk": "^0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "liyi@cassianetworks.com",
+  "license": "ISC"
+}
