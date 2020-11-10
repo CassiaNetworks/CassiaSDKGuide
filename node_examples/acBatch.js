@@ -68,7 +68,7 @@ function auth(key, secret) {
  * SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
  * API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
  * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
- * Nodejs library handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
+ * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
 function openScanSseAndConnect(routerMac, token) {
   const query = {
@@ -159,6 +159,11 @@ function disconnect(token, deviceMac) {
  * Get Device Connection Status
  * you will get notify when device connected or disconnected to a Router
  * refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-device-connection-status
+ * Sever-Sent Event(SSE) is used in scan, connection-state and notify of Cassia RESTful API,
+ * SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
+ * API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
+ * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
+ * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
 function openConnectStateSse(token) {
   const url = `${AC_HOST}/management/nodes/connection-state?mac=${routerMac}&access_token=${token}`;

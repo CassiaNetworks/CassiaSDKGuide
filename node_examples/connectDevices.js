@@ -96,7 +96,7 @@ function auth(key, secret) {
  * SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
  * API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
  * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
- * Nodejs library handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
+ * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
 function openScanSse(routerMac, token) {
   const query = {
