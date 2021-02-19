@@ -89,6 +89,7 @@ function openCombinationSse(token) {
         /*
         * if device is connected, you can write handle or do other operation here
         */
+        pair(token, data.ap, data.handle);
         break;
       case 'ap_state': // Router online/offline events
         break;
@@ -135,11 +136,25 @@ function connectWithAutoSelection(token, devices) {
       aps: '*',
       devices: devices,
       /*
-      * (Optional) use the roaming feature, AC will reconnect devices among Routers,
+      * (Mandatory) use the roaming feature, Router use random address to connect devices,
+        AC will reconnect devices among Routers,
       * you can listen to connection-state changes in combination SSE
       */
-      random: 1
+      random: 1,
+      /*
+      * (Optional): in ms, the connection request will timeout if it can’t be finished within this time. 
+      * The default timeout is 10,000ms. The range of value is 1000ms – 20000ms.
+      */
+      timeout: 20000
     })
+  });
+}
+
+function pair(token, routerMAC, deviceMAC) {
+  return req({
+    url: `${AC_HOST}/management/nodes/${deviceMAC}/pair?access_token=${token}&mac=${routerMAC}`,
+    method: 'POST',
+    body: JSON.stringify({ "bond": 1})
   });
 }
 
