@@ -1,4 +1,2 @@
-pytest==6.0.2
-sphinx==3.2.1
 click==7.1.2
 aiohttp-sse-client==0.1.7

@@ -1,4 +1,4 @@
-TI SensorTag CC2650STK Container App Example (Python) - Scan, Connect, Read, and Store
+TI SensorTag CC2650STK Container App Example (Python3) - Scan, Connect, Read, and Store
 ========================
 
 This Python application is for the Cassia Router Container.
