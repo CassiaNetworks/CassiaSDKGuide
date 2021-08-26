@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "co": "^4.6.0",
-    "node-cassia-sdk": "^0.0.1"
+    "node-cassia-sdk": "git+https://github.com/CassiaNetworks/node-cassia-sdk.git"
   },
   "devDependencies": {},
   "scripts": {
