@@ -94,6 +94,11 @@ function auth(key, secret) {
 /*
  * scan devices
  * refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#scan-bluetooth-devices
+ * Sever-Sent Event(SSE) is used in scan, connection-state and notify of Cassia RESTful API,
+ * SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
+ * API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
+ * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
+ * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
 function openScanSse(token, routerMac) {
   const query = {
@@ -180,6 +185,11 @@ async function processQueue(token) {
 /*
  * Receive Notification and Indication
  * refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication
+ * Sever-Sent Event(SSE) is used in scan, connection-state and notify of Cassia RESTful API,
+ * SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
+ * API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
+ * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
+ * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
 function openNotifySse(token, routerMac) {
   const url = `${AC_HOST}/gatt/nodes?mac=${routerMac}&access_token=${token}`;
