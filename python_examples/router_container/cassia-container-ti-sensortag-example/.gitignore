@@ -89,7 +89,7 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# Directory to store data from application
+# Directory to store data
 data/
 
 .DS_Store
