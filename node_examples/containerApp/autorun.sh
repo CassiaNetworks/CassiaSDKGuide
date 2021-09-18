@@ -1,0 +1,1 @@
+node /root/apps/SampleApp/index.js

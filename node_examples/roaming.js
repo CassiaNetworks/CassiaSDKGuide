@@ -62,6 +62,11 @@ function auth(key, secret) {
 /*
  * This API will create one combined SSE connection with AC. This SSE connection can receive scan data, notification/indication data, and connected device status for all the routers controlled by this AC.
  * refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#sse-combination-api
+ * Sever-Sent Event(SSE) is used in scan, connection-state and notify of Cassia RESTful API,
+ * SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
+ * API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
+ * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
+ * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
 function openCombinationSse(token) {
   const url = `${AC_HOST}/aps/events?access_token=${token}`;
@@ -84,6 +89,7 @@ function openCombinationSse(token) {
         /*
         * if device is connected, you can write handle or do other operation here
         */
+        pair(token, data.ap, data.handle);
         break;
       case 'ap_state': // Router online/offline events
         break;
@@ -130,11 +136,25 @@ function connectWithAutoSelection(token, devices) {
       aps: '*',
       devices: devices,
       /*
-      * (Optional) use the roaming feature, AC will reconnect devices among Routers,
+      * (Mandatory) use the roaming feature, Router use random address to connect devices,
+        AC will reconnect devices among Routers,
       * you can listen to connection-state changes in combination SSE
       */
-      random: 1
+      random: 1,
+      /*
+      * (Optional): in ms, the connection request will timeout if it can’t be finished within this time. 
+      * The default timeout is 10,000ms. The range of value is 1000ms – 20000ms.
+      */
+      timeout: 20000
     })
+  });
+}
+
+function pair(token, routerMAC, deviceMAC) {
+  return req({
+    url: `${AC_HOST}/management/nodes/${deviceMAC}/pair?access_token=${token}&mac=${routerMAC}`,
+    method: 'POST',
+    body: JSON.stringify({ "bond": 1})
   });
 }
 

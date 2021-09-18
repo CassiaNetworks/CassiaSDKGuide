@@ -1,0 +1,6 @@
+{ 
+    "name": "SampleApp", 
+    "config_items" : [
+      {"name": "endpoint", "type":"string", "require": true}
+    ]
+}

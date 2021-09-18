@@ -35,9 +35,21 @@ function req(options) {
 }
 
 /*
+ * get all routers connected to AC
+ * refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#obtain-cassia-routers-status-through-ac
+ */
+function getAllRouters(token) {
+  return req({
+    url: `${AC_HOST}/cassia/hubs?access_token=${token}`,
+    json: true
+  });
+}
+
+/*
  * since Router can only connect one device at one time, or it will return "chip busy" error
- * so we need a queue to connect devices sequentially
- * and prevent same device to enter queue
+ * so we need a queue to connect devices sequentially, and prevent same device to enter queue
+ * To improve efficiency, it is recommended to have one queue for each router when you have more than 10 routers. 
+ * you can use job queue lib like bull or bee for nodejs
  */
 function queue() {
   let q = [];
@@ -92,13 +104,8 @@ function auth(key, secret) {
 /*
  * scan devices
  * refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#scan-bluetooth-devices
- * Sever-Sent Event(SSE) is used in scan, connection-state and notify of Cassia RESTful API,
- * SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
- * API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
- * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
- * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
-function openScanSse(routerMac, token) {
+function openScanSse(token, routerMac) {
   const query = {
     /*
      * filter devices whose rssi is below -75, and name begins with 'Cassia',
@@ -179,7 +186,11 @@ async function processQueue(token) {
   try {
     let authInfo = await auth(DEVELOPER_KEY, DEVELOPER_SECRET);
     let token = authInfo.access_token;
-    openScanSse(ROUTER_MAC, token);
+    let allRouters = await getAllRouters(token);
+    let onlineRouters = allRouters.filter(r => r.status == 'online');
+    onlineRouters.forEach(router => {
+      openScanSse(token, router.mac);
+    });
     processQueue(token);
   } catch(ex) {
     console.error('fail:', ex);
