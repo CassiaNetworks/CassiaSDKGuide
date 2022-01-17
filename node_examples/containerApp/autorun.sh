@@ -1,1 +1,1 @@
-node /root/apps/SampleApp/index.js 2>&1 >/dev/null
+node /root/apps/SampleApp/index.js
