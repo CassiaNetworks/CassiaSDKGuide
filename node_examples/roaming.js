@@ -137,7 +137,7 @@ function connectWithAutoSelection(token, devices) {
       devices: devices,
       /*
       * (Mandatory) use the roaming feature, Router use random address to connect devices,
-        AC will reconnect devices among Routers,
+        AC will connect devices among Routers,
       * you can listen to connection-state changes in combination SSE
       */
       random: 1,
