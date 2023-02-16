@@ -70,7 +70,7 @@ function auth(key, secret) {
  * User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
  * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
-function openScanSseAndConnect(routerMac, token) {
+function openScanSseAndConnect(token) {
   const query = {
     /*
      * filter devices whose rssi is below -75, and name begins with 'Cassia',
@@ -84,7 +84,7 @@ function openScanSseAndConnect(routerMac, token) {
      * active scan makes devices response with data packet which usually contains device's name
      */
     active: 1,
-    mac: routerMac, // which router you want to start scan
+    mac: ROUTER_MAC, // which router you want to start scan
     access_token: token // you can put token in query 'access_token=<token>' or in header 'Bearer <token>' 
   };
   const url = `${AC_HOST}/gap/nodes?event=1&${qs.encode(query)}`;
@@ -113,7 +113,7 @@ function openScanSseAndConnect(routerMac, token) {
 function batchConnect(token, deviceMac, addrType) {
   let options = {
     'method': 'POST',
-    'url': `${AC_HOST}/api/gap/batch-connect?mac=${routerMac}&access_token=${token}`,
+    'url': `${AC_HOST}/gap/batch-connect?mac=${ROUTER_MAC}&access_token=${token}`,
     'headers': {
       'Content-Type': 'application/json'
     },
@@ -150,7 +150,7 @@ function write(token, deviceMac, handle, value) {
 function disconnect(token, deviceMac) {
   let options = {
     'method': 'DELETE',
-    'url': `${AC_HOST}/api/gap/nodes/${deviceMac}/connection?mac=${ROUTER_MAC}&access_token=${token}`,
+    'url': `${AC_HOST}/gap/nodes/${deviceMac}/connection?mac=${ROUTER_MAC}&access_token=${token}`,
   };
   return req(options);
 }
@@ -166,7 +166,7 @@ function disconnect(token, deviceMac) {
  * Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
  */
 function openConnectStateSse(token) {
-  const url = `${AC_HOST}/management/nodes/connection-state?mac=${routerMac}&access_token=${token}`;
+  const url = `${AC_HOST}/management/nodes/connection-state?mac=${ROUTER_MAC}&access_token=${token}`;
   const sse = new EventSource(url);
 
   sse.on('error',function(error) {
@@ -194,6 +194,7 @@ function openConnectStateSse(token) {
   try {
     let token = await auth(DEVELOPER_KEY, DEVELOPER_SECRET);
     console.log('token:', token);
+    token = token.access_token;
     await openScanSseAndConnect(token);
     await openConnectStateSse(token);
     console.log('success');

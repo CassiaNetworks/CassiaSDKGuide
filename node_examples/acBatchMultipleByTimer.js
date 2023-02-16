@@ -16,7 +16,7 @@ const AC_HOST = 'http://10.100.166.221/api';
  * you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
  */
 const DEVELOPER_KEY = 'admin';
-const DEVELOPER_SECRET = '1q2w#E$R';
+const DEVELOPER_SECRET = 'admin';
 
 /*
  * this is your router's MAC, you should add the router to AC's online list first
@@ -87,8 +87,7 @@ function openScanSse(token) {
      * use proper filters can significantly reduce traffic between Router and AC
      */
     filter_rssi: -75,
-    // filter_name: 'Cassia*',
-    filter_mac: 'D8:0B:CB:62:5C:2B',
+    filter_name: 'Cassia*',
     /*
      * use active scan, default is passive scan
      * active scan makes devices response with data packet which usually contains device's name
