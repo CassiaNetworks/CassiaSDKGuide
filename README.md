@@ -2,6 +2,8 @@
 
 | User  Cases                                                  | API        | Sample Code                          |
 | ------------------------------------------------------------ | ---------- | ------------------------------------ |
+| Get Access Token                                | Through AC | [code](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Get-Access-Token)                            |
+| Update Access Token                                | Through AC | [code](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token)                            |
 | Scan  devices from one router                                | Through AC | acScan.js                            |
 | Scan,  connect and get notification for one devices          | Through AC | acNotify.js                          |
 | Scan,  connect from one router for multiple devices          | Through AC | connectDevices.js                    |
