@@ -88,7 +88,7 @@ function reqConnectDevice(gatewayMac, deviceMac, addrType) {
 /**
  * Send request to write to device
  */
-function reqwriteValue(gatewayMac, deviceMac, serviceUuid, charUuid, value) {
+function reqWriteValue(gatewayMac, deviceMac, serviceUuid, charUuid, value) {
   console.log(`writing value: ${deviceMac}, ${serviceUuid}, ${charUuid}, ${value}`);
   let url = `/gatt/nodes/${deviceMac}/services/${serviceUuid}/characteristics/${charUuid}/value/${value}`;
   apiReqAsync(gatewayMac, HTTP_METHOD.GET, url, null);
@@ -109,7 +109,7 @@ const GATT_UUID = {
  */
 function openNotifyAsync(gatewayMac, deviceMac, serviceUuid, charUuid) {
   console.log(`opening notify: ${deviceMac}, ${serviceUuid}, ${charUuid}`);
-  reqwriteValue(gatewayMac, deviceMac, serviceUuid, charUuid, '0100');
+  reqWriteValue(gatewayMac, deviceMac, serviceUuid, charUuid, '0100');
 }
 
 /**
