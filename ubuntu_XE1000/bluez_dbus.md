@@ -19,7 +19,7 @@ KillMode=none
 OOMScoreAdjust=-900
 ```
 ### check version of bluez
-[bluez_5.53-1cassia3.7_armhf.deb](bluez_5.53-1cassia3.7_armhf.deb)
+[bluez_5.53-1cassia3.7_armhf.deb](apt_archives/bluez_5.53-1cassia3.7_armhf.deb) should be used , not the official one
 ```
 # dpkg -l bluez
 Desired=Unknown/Install/Remove/Purge/Hold
@@ -29,8 +29,11 @@ Desired=Unknown/Install/Remove/Purge/Hold
 +++-==============-===============-============-=================================
 ii  bluez          5.53-1cassia3.7 armhf        Bluetooth tools and daemons
 ```
-### update bluez up to newest
+### update bluez up to customized version
 ```
+# systemctl stop bluetooth
 # dpkg -P bluez
 # dpkg -i bluez_5.53-1cassia3.7_armhf.deb
+# systemctl enable bluetooth
+# systemctl restart bluetooth
 ```
