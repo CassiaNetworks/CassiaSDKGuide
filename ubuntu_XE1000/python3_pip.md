@@ -1,4 +1,4 @@
-## BLE + Python3 + ubuntu_XE1000.2.x.x  
+# BLE + Python3 + ubuntu_XE1000.2.x.x  
 ### check pip3  
 ```
 # pip3 list
@@ -12,6 +12,7 @@ wheel                  0.34.2
 # sudo apt-get update
 # sudo apt-get install -y python3-pip
 ```
+## bleak
 ### install bleak by pip3  
 [dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
 [bleak-0.21.1-py3-none-any.whl](pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one
@@ -57,3 +58,4 @@ to apply the newer whl you build , please remove the older bleak in the system
 # pip3 install bleak-0.21.1-py3-none-any.whl
 # pip3 list
 ```
+## TI-SensorTag-CC2650
