@@ -21,7 +21,7 @@ wheel                  0.34.2
 # pip3 show dbus_fast
 # pip3 install bleak-0.21.1-py3-none-any.whl
 ```
-### export dbus_fast wheel pack 
+### export dbus_fast as whl
 there is no dbus_fast-xxx-linux_armv7l.whl , so pip3 install dbus_fast means to compile dbus_fast from source . and E1000 don't have enough memory for compile dbus_fast.  
 X2000 has that memory and both E1000 and X2000 be the same arch of armv7l. so we could do pip3 install dbus_fast in X2000 and then export it as whl.  
 in X2000 Ubuntu Container, execute command as follow:  
@@ -66,5 +66,6 @@ to apply the newer whl you build , please remove the older bleak in the system
 # pip3 show aiohttp
 # pip3 install aiohttp-sse-client
 ```
-### export aiohttp
-please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-wheel-pack)
+### export aiohttp as whl
+please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-as-whl)
+[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl)
