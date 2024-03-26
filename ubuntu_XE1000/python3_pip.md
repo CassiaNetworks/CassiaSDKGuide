@@ -1,6 +1,3 @@
-
-
-
 ## BLE + Python3 + ubuntu_XE1000.2.x.x  
 ### check pip3  
 ```
@@ -23,7 +20,16 @@ wheel                  0.34.2
 # show dbus_fast
 # pip3 install bleak-0.21.1-py3-none-any.whl
 ```
-### export dbus_fast wheel pack  
+### export dbus_fast wheel pack 
+there is no dbus_fast-xxx-linux_armv7l.whl , so pip3 install dbus_fast means to compile dbus_fast from source . and E1000 don't have enough memory for compile dbus_fast.
+X2000 has that memory and both E1000 and X2000 be the same arch of armv7l. so we could do pip3 install dbus_fast in X2000 and then export it as whl.
+in X2000 Ubuntu Container, execute command as follow:
+```
+# pip3 install dbus_fast
+# pip3 show
+# pip wheel dbus_fast -w ./
+```
+[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl)
 ### build bleak  from source
 the bleak is an open source on github : https://github.com/hbldh/bleak  
 edit the source code as you need  
