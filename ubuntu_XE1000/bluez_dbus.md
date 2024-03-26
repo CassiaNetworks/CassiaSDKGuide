@@ -1,5 +1,6 @@
 ## BLE + bluez + ubuntu_XE1000.2.x.x
 ### switch BLE stack
+switch **Cassia BLE Stack** to Close. this configuration could be set via AC or RESTful API  
 ### check option of dbus-daemon
 please make sure the **"ExecStart"** in /lib/systemd/system/dbus.service is exactly same as **"/usr/bin/dbus-daemon --system  --nofork --nopidfile"**  
 ```
