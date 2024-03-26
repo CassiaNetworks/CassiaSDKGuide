@@ -21,9 +21,9 @@ wheel                  0.34.2
 # pip3 install bleak-0.21.1-py3-none-any.whl
 ```
 ### export dbus_fast wheel pack 
-there is no dbus_fast-xxx-linux_armv7l.whl , so pip3 install dbus_fast means to compile dbus_fast from source . and E1000 don't have enough memory for compile dbus_fast.
-X2000 has that memory and both E1000 and X2000 be the same arch of armv7l. so we could do pip3 install dbus_fast in X2000 and then export it as whl.
-in X2000 Ubuntu Container, execute command as follow:
+there is no dbus_fast-xxx-linux_armv7l.whl , so pip3 install dbus_fast means to compile dbus_fast from source . and E1000 don't have enough memory for compile dbus_fast.  
+X2000 has that memory and both E1000 and X2000 be the same arch of armv7l. so we could do pip3 install dbus_fast in X2000 and then export it as whl.  
+in X2000 Ubuntu Container, execute command as follow:  
 ```
 # pip3 install dbus_fast
 # pip3 show
