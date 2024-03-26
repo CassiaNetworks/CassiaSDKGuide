@@ -18,7 +18,7 @@ wheel                  0.34.2
 [bleak-0.21.1-py3-none-any.whl](pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one
 ```
 # pip3 install dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl  
-# show dbus_fast
+# pip3 show dbus_fast
 # pip3 install bleak-0.21.1-py3-none-any.whl
 ```
 ### export dbus_fast wheel pack 
@@ -59,3 +59,11 @@ to apply the newer whl you build , please remove the older bleak in the system
 # pip3 list
 ```
 ## TI-SensorTag-CC2650
+### install aiohttp-sse-client by pip3
+[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
+```
+# pip3 install aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl
+# pip3 show aiohttp
+# pip3 install aiohttp-sse-client
+### export aiohttp
+```
