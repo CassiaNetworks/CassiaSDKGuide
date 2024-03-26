@@ -1,8 +1,11 @@
-`DEBNAME=hello-ble && mkdir -p  /$DEBNAME/{build,extract/DEBIAN}`
-**b, copy your bin file to extract/usr/bin , etc file to extrack/etc , lib file (*.so) to extract /usr/lib**
-**c, prepare an empty control file**
-`touch extract/DEBIAN/control`
-**d, edit control file**
+#### Build a deb package
+this is an example of hello-ble_1.2cassia1_armhf.deb  
+**a, cd to your work dir and execute:**  
+`DEBNAME=hello-ble && mkdir -p  /$DEBNAME/{build,extract/DEBIAN}`  
+**b, copy your bin file to extract/usr/bin , etc file to extrack/etc , lib file (*.so) to extract /usr/lib**  
+**c, prepare an empty control file**  
+`touch extract/DEBIAN/control`  
+**d, edit control file**  
 ```
 package: hello-ble
 version: 1.2cassia1
@@ -11,8 +14,8 @@ Maintainer: Cassia Developers <cassia-dev@cassianetworks.com>
 Homepage: http://nodejs.org/
 Description: this is a demo
 ```
-**e, build your deb package in dir hello-ble and you could find it in dir build**
-the structure of hello-ble should like below:
+**e, build your deb package in dir hello-ble and you could find it in dir build**  
+the structure of hello-ble should like below:  
 ```
 hello-ble/
 |-- build
