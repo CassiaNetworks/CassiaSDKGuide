@@ -16,9 +16,10 @@
 | scan,  connect, collect notification from devices, and send data to custom endpoint | Container  | containerApp                         |
 
 Cassia SDK Implementation Guide
-[XE1000 Ubuntu Container APP Guide](ubuntu_XE1000/README.md)
 
 This project contains code examples and a [wiki](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki) for the Cassia SDK Implementation Guide.
+
+This project also contain [XE1000 Ubuntu Container APP Guide](ubuntu_XE1000/README.md)
 
 We are looking for any edit suggestions or corrections. Questions are welcomed as well. Please contact us at: 
 [https://www.cassianetworks.com/support](https://www.cassianetworks.com/support)
