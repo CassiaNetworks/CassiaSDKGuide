@@ -65,5 +65,6 @@ to apply the newer whl you build , please remove the older bleak in the system
 # pip3 install aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl
 # pip3 show aiohttp
 # pip3 install aiohttp-sse-client
-### export aiohttp
 ```
+### export aiohttp
+please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-wheel-pack)
