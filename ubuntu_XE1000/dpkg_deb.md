@@ -1,3 +1,6 @@
+#### Build a deb package
+this is an example of hello-ble_1.2cassia1_armhf.deb  
+**a, cd to your work dir and execute:**  
 `DEBNAME=hello-ble && mkdir -p  /$DEBNAME/{build,extract/DEBIAN}`  
 **b, copy your bin file to extract/usr/bin , etc file to extrack/etc , lib file (*.so) to extract /usr/lib**  
 **c, prepare an empty control file**  
