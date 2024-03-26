@@ -67,5 +67,5 @@ to apply the newer whl you build , please remove the older bleak in the system
 # pip3 install aiohttp-sse-client
 ```
 ### export aiohttp as whl
-please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-as-whl)
+please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-as-whl)  
 [aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl)
