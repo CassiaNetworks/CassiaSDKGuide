@@ -14,12 +14,30 @@ wheel                  0.34.2
 ```
 ## bleak
 ### install bleak by pip3  
-[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
-[bleak-0.21.1-py3-none-any.whl](pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one
+[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) should be used for X1000/E1000/X2000 series, not the offical one. Please download by click [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) or by wget
+```
+# wget https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl
+
+Length: 4156492 (4.0M) [application/octet-stream]
+Saving to: 'dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl'
+
+dbus_fast-2.21.1-cp38-cp38-linux_armv7l.w 100%[===================================================================================>]   3.96M
+```
+[bleak-0.21.1-py3-none-any.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used for X1000/E1000/X2000 series, not the offical one. Please download by click [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) or by wget
+```
+# wget https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl
+
+Length: 139327 (136K) [application/octet-stream]
+Saving to: 'bleak-0.21.1-py3-none-any.whl.1'
+
+bleak-0.21.1-py3-none-any.whl.1           100%[===================================================================================>] 136.06K
+```
+check the file format and size , then install in container
 ```
 # pip3 install dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl  
 # pip3 show dbus_fast
 # pip3 install bleak-0.21.1-py3-none-any.whl
+# pip3 show bleak
 ```
 ### export dbus_fast as whl
 there is no dbus_fast-xxx-linux_armv7l.whl , so pip3 install dbus_fast means to compile dbus_fast from source . and E1000 don't have enough memory for compile dbus_fast.  
@@ -30,7 +48,6 @@ in X2000 Ubuntu Container, execute command as follow:
 # pip3 show
 # pip wheel dbus_fast -w ./
 ```
-[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl)
 ### build bleak  from source
 the bleak is an open source on github : https://github.com/hbldh/bleak  
 edit the source code as you need  
@@ -60,7 +77,11 @@ to apply the newer whl you build , please remove the older bleak in the system
 ```
 ## TI-SensorTag-CC2650
 ### install aiohttp-sse-client by pip3
-[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
+[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) should be used for X1000/E1000/X2000 series, not the offical one. Please download by click [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) or by wget
+```
+# wget https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl
+```
+check the file format and size , then install in container
 ```
 # pip3 install aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl
 # pip3 show aiohttp
@@ -68,4 +89,3 @@ to apply the newer whl you build , please remove the older bleak in the system
 ```
 ### export aiohttp as whl
 please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-as-whl)  
-[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl)
