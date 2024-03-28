@@ -18,11 +18,16 @@ wheel                  0.34.2
 ```
 # wget https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl
 ```
-[bleak-0.21.1-py3-none-any.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one
+[bleak-0.21.1-py3-none-any.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one. Please download by click [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) or by wget
+```
+# wget https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl
+```
+check the file format and size , then install in container
 ```
 # pip3 install dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl  
 # pip3 show dbus_fast
 # pip3 install bleak-0.21.1-py3-none-any.whl
+# pip3 show bleak
 ```
 ### export dbus_fast as whl
 there is no dbus_fast-xxx-linux_armv7l.whl , so pip3 install dbus_fast means to compile dbus_fast from source . and E1000 don't have enough memory for compile dbus_fast.  
