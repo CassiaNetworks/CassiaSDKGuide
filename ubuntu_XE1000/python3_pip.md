@@ -26,6 +26,11 @@ dbus_fast-2.21.1-cp38-cp38-linux_armv7l.w 100%[=================================
 [bleak-0.21.1-py3-none-any.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used for X1000/E1000/X2000 series, not the offical one. Please download by click [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) or by wget
 ```
 # wget https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl
+
+Length: 139327 (136K) [application/octet-stream]
+Saving to: 'bleak-0.21.1-py3-none-any.whl.1'
+
+bleak-0.21.1-py3-none-any.whl.1           100%[===================================================================================>] 136.06K
 ```
 check the file format and size , then install in container
 ```
