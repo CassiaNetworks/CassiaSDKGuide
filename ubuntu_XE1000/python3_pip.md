@@ -14,8 +14,8 @@ wheel                  0.34.2
 ```
 ## bleak
 ### install bleak by pip3  
-[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
-[bleak-0.21.1-py3-none-any.whl](pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one
+[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl]([pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl)) should be used , not the offical one  
+[bleak-0.21.1-py3-none-any.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one
 ```
 # pip3 install dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl  
 # pip3 show dbus_fast
@@ -30,7 +30,7 @@ in X2000 Ubuntu Container, execute command as follow:
 # pip3 show
 # pip wheel dbus_fast -w ./
 ```
-[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl)
+[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl)
 ### build bleak  from source
 the bleak is an open source on github : https://github.com/hbldh/bleak  
 edit the source code as you need  
@@ -60,7 +60,7 @@ to apply the newer whl you build , please remove the older bleak in the system
 ```
 ## TI-SensorTag-CC2650
 ### install aiohttp-sse-client by pip3
-[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
+[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
 ```
 # pip3 install aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl
 # pip3 show aiohttp
@@ -68,4 +68,4 @@ to apply the newer whl you build , please remove the older bleak in the system
 ```
 ### export aiohttp as whl
 please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-as-whl)  
-[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl)
+[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) for X1000/E1000/X2000 is [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl)
