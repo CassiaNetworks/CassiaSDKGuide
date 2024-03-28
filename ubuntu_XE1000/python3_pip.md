@@ -14,7 +14,7 @@ wheel                  0.34.2
 ```
 ## bleak
 ### install bleak by pip3  
-[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl]([pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl)) should be used , not the offical one  
+[dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl]([pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl) should be used , not the offical one  
 [bleak-0.21.1-py3-none-any.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/bleak-0.21.1-py3-none-any.whl) should be used , not the offical one
 ```
 # pip3 install dbus_fast-2.21.1-cp38-cp38-linux_armv7l.whl  
