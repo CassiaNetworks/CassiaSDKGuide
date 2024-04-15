@@ -29,13 +29,14 @@
 | ubuntu-advantage-tools | 20.3 |
 | wheel | 0.34.2 |
 ## ubuntu_XE1000.2.0.8.tar.gz
+#### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
 | tarball size | 159MB |
 | total file size | 551MB |
 | used space | 712MB |
 | free space | 1486MB |
-
+#### OS and Tools
 | soft info | version |
 |--|--|
 | Ubuntu| 20.04.6 LTS |
