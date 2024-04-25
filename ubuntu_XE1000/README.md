@@ -55,7 +55,7 @@
 #### OS and Tools
 | soft info | version |
 |--|--|
-| Ubuntu 22.04.4 LTS |
+| Ubuntu | 22.04.4 LTS |
 | dotnet | 8.0.4cassia1 |
 | nodejs | N/A |
 | python2 | N/A |
