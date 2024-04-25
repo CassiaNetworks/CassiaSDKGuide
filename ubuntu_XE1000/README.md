@@ -48,17 +48,17 @@
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
-| tarball size | 264MB |
-| total file size | 975MB |
-| used space | 1242MB |
-| free space | 957MB |
+| tarball size | 246MB |
+| total file size | 731MB |
+| used space | 980MB |
+| free space | 1219MB |
 #### OS and Tools
 | soft info | version |
 |--|--|
 | Ubuntu 22.04.4 LTS |
 | dotnet | 8.0.4cassia1 |
 | nodejs | N/A |
-| python2 | 2.7.18 |
+| python2 | N/A |
 | python3 | 3.10.12-1~22.04.3 |
 ## Ubuntu Container APP
 ### use bluez
