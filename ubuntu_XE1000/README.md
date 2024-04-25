@@ -44,7 +44,7 @@
 | nodejs | N/A |
 | python2 | 2.7.18 |
 | python3 | 3.8.10 |
-## ubuntu_XE1000.2.x.y.tar.gz (preview)
+## ubuntu_XE1000.2.2.0.tar.gz (preview)
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
