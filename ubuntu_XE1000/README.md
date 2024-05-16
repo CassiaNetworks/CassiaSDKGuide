@@ -67,3 +67,35 @@
 [customize whl](python3_pip.md)
 ### dpkg
 [customize deb](dpkg_deb.md)
+### Node.js
+#### AWS SDK for JavaScript
+**a, Install and Run ubuntu_XE1000.2.0.1**  
+**b, Check Node.js version**  
+```
+# dpkg -l nodejs
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name           Version                 Architecture Description
++++-==============-=======================-============-==================================================
+ii  nodejs         10.19.0~dfsg-3ubuntu1.6 armhf        evented I/O for V8 javascript - runtime executable
+```
+**c, Install and Check NPM version**  
+```
+# dpkg -l npm
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name           Version            Architecture Description
++++-==============-==================-============-=================================
+ii  npm            6.14.4+ds-1ubuntu2 all          package manager for Node.js
+```
+**d, Install aws-sdk**  
+```
+# npm install aws-sdk
+# npm list --depth=0  
+/root
+`-- aws-sdk@2.1621.0
+```
+See also [AWS SDK](https://www.npmjs.com/package/aws-sdk)
+
