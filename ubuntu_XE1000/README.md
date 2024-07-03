@@ -44,6 +44,22 @@
 | nodejs | N/A |
 | python2 | 2.7.18 |
 | python3 | 3.8.10 |
+## ubuntu_XE1000.2.0.10.tar.gz
+#### Disk/Storage usage in Gateway
+| space stat. | size (MB) |
+|--|--|
+| tarball size | 191MB |
+| total file size | 640MB |
+| used space | 833MB |
+| free space | 1365MB |
+#### OS and Tools
+| soft info | version |
+|--|--|
+| Ubuntu| 20.04.6 LTS |
+| bluetooth | 5.53-0ubuntu3.8 |
+| bluez-tools | 2.0~20170911.0.7cb788c-2build1 |
+| python2 | 2.7.18 |
+| python3 | 3.8.10 |
 ## ubuntu_XE1000.2.2.0.tar.gz (preview)
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
