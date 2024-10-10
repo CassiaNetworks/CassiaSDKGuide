@@ -44,14 +44,30 @@
 | nodejs | N/A |
 | python2 | 2.7.18 |
 | python3 | 3.8.10 |
+## ubuntu_XE1000.2.0.10.tar.gz
+#### Disk/Storage usage in Gateway
+| space stat. | size (MB) |
+|--|--|
+| tarball size | 191MB |
+| total file size | 640MB |
+| used space | 833MB |
+| free space | 1365MB |
+#### OS and Tools
+| soft info | version |
+|--|--|
+| Ubuntu| 20.04.6 LTS |
+| bluetooth | 5.53-0ubuntu3.8 |
+| bluez-tools | 2.0~20170911.0.7cb788c-2build1 |
+| python2 | 2.7.18 |
+| python3 | 3.8.10 |
 ## ubuntu_XE1000.2.2.0.tar.gz (preview)
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
-| tarball size | 246MB |
-| total file size | 731MB |
-| used space | 980MB |
-| free space | 1219MB |
+| tarball size | 193MB |
+| total file size | 541MB |
+| used space | 737MB |
+| free space | 1507MB |
 #### OS and Tools
 | soft info | version |
 |--|--|
@@ -60,6 +76,25 @@
 | nodejs | N/A |
 | python2 | N/A |
 | python3 | 3.10.12-1~22.04.3 |
+## ubuntu_XE1000.2.2.1.tar.gz (preview)
+#### Disk/Storage usage in Gateway
+| space stat. | size (MB) |
+|--|--|
+| tarball size | 182MB |
+| total file size | 543MB |
+| used space | 728MB |
+| free space | 1471MB |
+#### OS and Tools
+| soft info | version |
+|--|--|
+| Ubuntu | 22.04.5 LTS |
+| bluetooth | 5.64-0ubuntu1.3 |
+| bluez-tools | 2.0~20170911.0.7cb788c-4 |
+| dotnet | 8.0.4cassia1 |
+| libbluetooth3 | 5.64-0ubuntu1.3 |
+| python3 | 3.10.12-1~22.04.3 |
+| rinetd | 0.62.1sam-1.1 |
+| unzip | 6.0-26ubuntu3.2 |
 ## Ubuntu Container APP
 ### use bluez
 [customize bluez](bluez_dbus.md)
