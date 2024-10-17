@@ -64,10 +64,10 @@
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
-| tarball size | 193MB |
-| total file size | 541MB |
-| used space | 737MB |
-| free space | 1507MB |
+| tarball size | 161MB |
+| total file size | 454MB |
+| used space | 563MB |
+| free space | 1582MB |
 #### OS and Tools
 | soft info | version |
 |--|--|
