@@ -86,7 +86,7 @@
 | free space | 1250MB |
 #### OS and Tools
 | soft info | version |
-|--|--|
+|--|--|--|--|
 | Ubuntu | 22.04.5 LTS | footprint | uninstall |
 | bluetooth | 5.64-0ubuntu1.3 | x | x |
 | bluez-tools | 2.0~20170911.0.7cb788c-4 | x | x |
