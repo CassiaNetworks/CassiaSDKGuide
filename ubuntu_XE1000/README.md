@@ -92,6 +92,7 @@
 | bluez-tools | 2.0~20170911.0.7cb788c-4 | N/A | N/A |
 | dotnet | 8.0.4cassia1 | 88MB | dpkg -P dotnet |
 | libbluetooth3 | 5.64-0ubuntu1.3 | N/A | N/A |
+| nodejs | 20.11.1cassia1 | 159MB | dpkg -P nodejs libatomic1  |
 | python3 | 3.10.12-1~22.04.3 | N/A | N/A |
 | rinetd | 0.62.1sam-1.1 | N/A | N/A |
 | unzip | 6.0-26ubuntu3.2 | N/A | N/A |
