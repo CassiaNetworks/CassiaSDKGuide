@@ -80,7 +80,7 @@
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
-| tarball size | 229B |
+| tarball size | 229MB |
 | total file size | 713MB |
 | used space | 949MB |
 | free space | 1250MB |
@@ -94,7 +94,7 @@
 | libbluetooth3 | 5.64-0ubuntu1.3 | N/A | N/A |
 | nodejs | 20.11.1cassia1 | 159MB | dpkg -P nodejs libatomic1  |
 | python3 | 3.10.12-1~22.04.3 | N/A | N/A |
-| python3-pip | 22.0.2+dfsg-1ubuntu0.5 | 18MB | dpkg -P python3-wheel python3-setuptools python3-pip |
+| python3-pip | 22.0.2+dfsg-1ubuntu0.5 | 18MB | dpkg -P python3-wheel python3-setuptools python3-pip python3-pkg-resources ca-certificates python3-distutils python3-lib2to3 |
 | rinetd | 0.62.1sam-1.1 | N/A | N/A |
 | unzip | 6.0-26ubuntu3.2 | N/A | N/A |
 ## Ubuntu Container APP
