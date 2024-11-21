@@ -91,10 +91,10 @@
 | bluetooth | 5.64-0ubuntu1.3 | x | x |
 | bluez-tools | 2.0~20170911.0.7cb788c-4 | x | x |
 | dotnet | 8.0.4cassia1 | 88MB | dpkg -P dotnet |
-| libbluetooth3 | 5.64-0ubuntu1.3 |
-| python3 | 3.10.12-1~22.04.3 |
-| rinetd | 0.62.1sam-1.1 |
-| unzip | 6.0-26ubuntu3.2 |
+| libbluetooth3 | 5.64-0ubuntu1.3 | x | x |
+| python3 | 3.10.12-1~22.04.3 | x | x |
+| rinetd | 0.62.1sam-1.1 | x | x |
+| unzip | 6.0-26ubuntu3.2 | x | x |
 ## Ubuntu Container APP
 ### use bluez
 [customize bluez](bluez_dbus.md)
