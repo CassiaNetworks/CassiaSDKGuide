@@ -85,16 +85,16 @@
 | used space | 949MB |
 | free space | 1250MB |
 #### OS and Tools
-| soft info | version |
+| soft info | version | footprint | uninstall |
 |--|--|--|--|
-| Ubuntu | 22.04.5 LTS | footprint | uninstall |
-| bluetooth | 5.64-0ubuntu1.3 | x | x |
-| bluez-tools | 2.0~20170911.0.7cb788c-4 | x | x |
+| Ubuntu | 22.04.5 LTS | N/A | N/A |
+| bluetooth | 5.64-0ubuntu1.3 | N/A | N/A |
+| bluez-tools | 2.0~20170911.0.7cb788c-4 | N/A | N/A |
 | dotnet | 8.0.4cassia1 | 88MB | dpkg -P dotnet |
-| libbluetooth3 | 5.64-0ubuntu1.3 | x | x |
-| python3 | 3.10.12-1~22.04.3 | x | x |
-| rinetd | 0.62.1sam-1.1 | x | x |
-| unzip | 6.0-26ubuntu3.2 | x | x |
+| libbluetooth3 | 5.64-0ubuntu1.3 | N/A | N/A |
+| python3 | 3.10.12-1~22.04.3 | N/A | N/A |
+| rinetd | 0.62.1sam-1.1 | N/A | N/A |
+| unzip | 6.0-26ubuntu3.2 | N/A | N/A |
 ## Ubuntu Container APP
 ### use bluez
 [customize bluez](bluez_dbus.md)
