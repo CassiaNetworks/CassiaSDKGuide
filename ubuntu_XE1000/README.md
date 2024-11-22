@@ -64,10 +64,10 @@
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
-| tarball size | 193MB |
-| total file size | 541MB |
-| used space | 737MB |
-| free space | 1507MB |
+| tarball size | 161MB |
+| total file size | 454MB |
+| used space | 563MB |
+| free space | 1582MB |
 #### OS and Tools
 | soft info | version |
 |--|--|
@@ -80,21 +80,23 @@
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
-| tarball size | 182MB |
-| total file size | 543MB |
-| used space | 728MB |
-| free space | 1471MB |
+| tarball size | 229MB |
+| total file size | 713MB |
+| used space | 949MB |
+| free space | 1250MB |
 #### OS and Tools
-| soft info | version |
-|--|--|
-| Ubuntu | 22.04.5 LTS |
-| bluetooth | 5.64-0ubuntu1.3 |
-| bluez-tools | 2.0~20170911.0.7cb788c-4 |
-| dotnet | 8.0.4cassia1 |
-| libbluetooth3 | 5.64-0ubuntu1.3 |
-| python3 | 3.10.12-1~22.04.3 |
-| rinetd | 0.62.1sam-1.1 |
-| unzip | 6.0-26ubuntu3.2 |
+| soft info | version | footprint | uninstall |
+|--|--|--|--|
+| Ubuntu | 22.04.5 LTS | N/A | N/A |
+| bluetooth | 5.64-0ubuntu1.3 | N/A | N/A |
+| bluez-tools | 2.0~20170911.0.7cb788c-4 | N/A | N/A |
+| dotnet | 8.0.4cassia1 | 88MB | dpkg -P dotnet |
+| libbluetooth3 | 5.64-0ubuntu1.3 | N/A | N/A |
+| nodejs | 20.11.1cassia1 | 159MB | dpkg -P nodejs libatomic1  |
+| python3 | 3.10.12-1~22.04.3 | N/A | N/A |
+| python3-pip | 22.0.2+dfsg-1ubuntu0.5 | 23MB | dpkg -P python3-wheel python3-setuptools python3-pip<br>dpkg -P python3-pkg-resources ca-certificates<br>dpkg -P python3-distutils python3-lib2to3 |
+| rinetd | 0.62.1sam-1.1 | N/A | N/A |
+| unzip | 6.0-26ubuntu3.2 | N/A | N/A |
 ## Ubuntu Container APP
 ### use bluez
 [customize bluez](bluez_dbus.md)
