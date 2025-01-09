@@ -60,6 +60,15 @@
 | bluez-tools | 2.0~20170911.0.7cb788c-2build1 |
 | python2 | 2.7.18 |
 | python3 | 3.8.10 |
+## ubuntu_XE1000.2.0.11.tar.gz
+From [ubuntu_XE1000.2.0.10.tar.gz](readme.md)
+#### Disk/Storage usage in Gateway
+| space stat. | size (MB) |
+|--|--|
+| tarball size | 193MB |
+| total file size | 646MB |
+| used space | 849MB |
+| free space | 1349MB |
 ## ubuntu_XE1000.2.2.0.tar.gz (preview)
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
