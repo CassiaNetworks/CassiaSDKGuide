@@ -61,7 +61,7 @@
 | python2 | 2.7.18 |
 | python3 | 3.8.10 |
 ## ubuntu_XE1000.2.0.11.tar.gz
-From [ubuntu_XE1000.2.0.10.tar.gz](readme.md)
+From [ubuntu_XE1000.2.0.10.tar.gz](README.md#ubuntu_xe1000208targz)
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
