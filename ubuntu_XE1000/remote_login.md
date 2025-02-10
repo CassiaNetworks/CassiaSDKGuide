@@ -1,4 +1,5 @@
 # SSH Remote Login
+AC Web Portal -> Gateways -> MAC -> Container -> Container Operation -> Remote Login
 ## Overview
 The SSH remote login feature allows users to access containers deployed within a LAN through an AC server deployed on the public network. Its basic principle is SSH reverse proxy.  
 The remote login is triggered through a button on the AC portal, requiring the Gateway to be in an online state. The Gateway actively initiates a reverse proxy request to the AC. Upon successful request, a new input box will pop up, prompting for the user's credentials. After successful authentication, the user will continue to access the Shell of the Container in a new browser window, with the green text "SSH CONNECTION ESTABLISHED" displayed in the lower left corner.  
@@ -47,3 +48,6 @@ tcp        0      0 127.0.0.1:58198         127.0.0.1:8001          ESTABLISHED 
 tcp        0      0 127.0.0.1:8001          127.0.0.1:58198         ESTABLISHED 983237/sshd: ssh3rd
 ```
 When using the remote login function via a web page and successfully opening a browser window for the container shell, a connection to 127.0.0.1:8001 can be detected. This is because the local web process, node, serves as an SSH client accessing the container through the reverse proxy.
+## Double Check in Debug LOG
+export the AC Debug Log as a Zip file. the button path is : AC Web Portal -> Settings -> Operation -> Export Debug log .
+All the infomation could be found in tmp/debug/ps.log and tmp/debug/netstat.log
