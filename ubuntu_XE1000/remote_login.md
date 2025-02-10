@@ -1,7 +1,8 @@
-## Description  
+# SSH Remote Login
+## Overview
 The SSH remote login feature allows users to access containers deployed within a LAN through an AC server deployed on the public network. Its basic principle is SSH reverse proxy.  
 The remote login is triggered through a button on the AC portal, requiring the Gateway to be in an online state. The Gateway actively initiates a reverse proxy request to the AC. Upon successful request, a new input box will pop up, prompting for the user's credentials. After successful authentication, the user will continue to access the Shell of the Container in a new browser window, with the green text "SSH CONNECTION ESTABLISHED" displayed in the lower left corner.  
-## Trouble Shooting(do all the commands on the same AC console)
+## Trouble Shooting (do all the commands on the same AC console)
 ### check online log by MAC
 ```
 root@cassia-ac:/opt/cassia-ac/logs# grep "E2:34:3C" -rn nfm-debug.log | tail -n 10
