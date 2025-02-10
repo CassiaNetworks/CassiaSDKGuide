@@ -5,7 +5,6 @@ The remote login is triggered through a button on the AC portal, requiring the G
 ### check online log by MAC
 ```
 root@cassia-ac:/opt/cassia-ac/logs# grep "E2:34:3C" -rn nfm-debug.log | tail -n 10
-632041:[2025-02-10T05:15:16.998+00:00] [ERR] [NFM] NFM_OTA_JobsNotifyNext,find(CC:1B:E0:E2:34:3C) failed: PQntuples=0.
 632042:[2025-02-10T05:15:16.998+00:00] [INFO] [NFM] NFM_MQTTC send NFM_IPC_INFORM_APONLINE(CC:1B:E0:E2:34:3C) to Restful.
 632043:[2025-02-10T05:15:16.999+00:00] [INFO] [NFM] NFM_MQTTC send NFM_IPC_INFORM_APONLINE(CC:1B:E0:E2:34:3C) to Web.
 632044:[2025-02-10T05:15:16.999+00:00] [INFO] [NFM] In NFM_DB_GetApStatusAndProtocol(ap=CC:1B:E0:E2:34:3C)::
@@ -15,13 +14,11 @@ root@cassia-ac:/opt/cassia-ac/logs# grep "E2:34:3C" -rn nfm-debug.log | tail -n 
 632138:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] Received HelloRequest from AP(CC:1B:E0:E2:34:3C).
 632139:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] NFM_MQTTC_DirectSnd to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payloadlen=56.
 632140:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] SendHelloResponse to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payload={"timestamp":          1739164681, "seq_num":         1}.
-root@cassia-ac:/opt/cassia-ac/logs# grep "E2:34:3C" -rn nfm-debug.log | tail -n 5
-632054:[2025-02-10T05:15:18.934+00:00] [INFO] [NFM] Receive set initial commands result(ap=CC:1B:E0:E2:34:3C,callid=671,StatusCode=200).
-632057:[2025-02-10T05:15:18.937+00:00] [INFO] [NFM] ap(CC:1B:E0:E2:34:3C) http response data gzdecompress(ulSrcLen=1410) result:ulUngzipResultBufLen=3297.
-632138:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] Received HelloRequest from AP(CC:1B:E0:E2:34:3C).
-632139:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] NFM_MQTTC_DirectSnd to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payloadlen=56.
-632140:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] SendHelloResponse to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payload={"timestamp":          1739164681, "seq_num":         1}.
+root@cassia-ac:/opt/cassia-ac/logs# grep "E2:34:3C" -rn main.log | tail -n 5
+167865:[2025-02-10T05:15:17.001+00:00] [INFO] [MAIN WEB] online message {"aps":[{"model":"X2000","ip":"10.100.22.6","mac":"CC:1B:E0:E2:34:3C","version":"2.2.0.2502081412","uptime":0,"first":" ","localip":"10.100.22.6"}],"type":"online"}
+167866:[2025-02-10T05:15:17.006+00:00] [INFO] [MAIN WEB] get local sn CC:1B:E0:E2:34:3C 
 ```
+Make sure the gateway is online on this AC.
 ### sshd: ssh3rd [priv]
 ```
 root@cassia-ac:~# ps -ef | grep sshd
