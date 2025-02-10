@@ -1,7 +1,27 @@
 ## Description  
 The SSH remote login feature allows users to access containers deployed within a LAN through an AC server deployed on the public network. Its basic principle is SSH reverse proxy.  
 The remote login is triggered through a button on the AC portal, requiring the Gateway to be in an online state. The Gateway actively initiates a reverse proxy request to the AC. Upon successful request, a new input box will pop up, prompting for the user's credentials. After successful authentication, the user will continue to access the Shell of the Container in a new browser window, with the green text "SSH CONNECTION ESTABLISHED" displayed in the lower left corner.  
-## Trouble Shooting
+## Trouble Shooting(do all the commands on the same AC console)
+### check online log by MAC
+```
+root@cassia-ac:/opt/cassia-ac/logs# grep "E2:34:3C" -rn nfm-debug.log | tail -n 10
+632041:[2025-02-10T05:15:16.998+00:00] [ERR] [NFM] NFM_OTA_JobsNotifyNext,find(CC:1B:E0:E2:34:3C) failed: PQntuples=0.
+632042:[2025-02-10T05:15:16.998+00:00] [INFO] [NFM] NFM_MQTTC send NFM_IPC_INFORM_APONLINE(CC:1B:E0:E2:34:3C) to Restful.
+632043:[2025-02-10T05:15:16.999+00:00] [INFO] [NFM] NFM_MQTTC send NFM_IPC_INFORM_APONLINE(CC:1B:E0:E2:34:3C) to Web.
+632044:[2025-02-10T05:15:16.999+00:00] [INFO] [NFM] In NFM_DB_GetApStatusAndProtocol(ap=CC:1B:E0:E2:34:3C)::
+632047:[2025-02-10T05:15:17.021+00:00] [INFO] [NFM] NFM_AllocCallId(Restful,OrigCallId=39744,ApiVer=1,0,NULL,AP=CC:1B:E0:E2:34:3C)in NFM_ProcIPCPktFromRestful()@1,return 673.
+632054:[2025-02-10T05:15:18.934+00:00] [INFO] [NFM] Receive set initial commands result(ap=CC:1B:E0:E2:34:3C,callid=671,StatusCode=200).
+632057:[2025-02-10T05:15:18.937+00:00] [INFO] [NFM] ap(CC:1B:E0:E2:34:3C) http response data gzdecompress(ulSrcLen=1410) result:ulUngzipResultBufLen=3297.
+632138:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] Received HelloRequest from AP(CC:1B:E0:E2:34:3C).
+632139:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] NFM_MQTTC_DirectSnd to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payloadlen=56.
+632140:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] SendHelloResponse to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payload={"timestamp":          1739164681, "seq_num":         1}.
+root@cassia-ac:/opt/cassia-ac/logs# grep "E2:34:3C" -rn nfm-debug.log | tail -n 5
+632054:[2025-02-10T05:15:18.934+00:00] [INFO] [NFM] Receive set initial commands result(ap=CC:1B:E0:E2:34:3C,callid=671,StatusCode=200).
+632057:[2025-02-10T05:15:18.937+00:00] [INFO] [NFM] ap(CC:1B:E0:E2:34:3C) http response data gzdecompress(ulSrcLen=1410) result:ulUngzipResultBufLen=3297.
+632138:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] Received HelloRequest from AP(CC:1B:E0:E2:34:3C).
+632139:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] NFM_MQTTC_DirectSnd to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payloadlen=56.
+632140:[2025-02-10T05:18:01.310+00:00] [INFO] [NFM] SendHelloResponse to Router(CC:1B:E0:E2:34:3C),topic=/IPC/V2/AP/CC:1B:E0:E2:34:3C/AC/HelloResponse, payload={"timestamp":          1739164681, "seq_num":         1}.
+```
 ### sshd: ssh3rd [priv]
 ```
 root@cassia-ac:~# ps -ef | grep sshd
