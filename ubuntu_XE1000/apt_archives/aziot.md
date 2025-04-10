@@ -1,4 +1,4 @@
-## aziot offical source
+## aziot official source
 https://github.com/Azure/azure-iotedge/releases  
 https://learn.microsoft.com/en-us/azure/iot-edge/how-to-provision-single-device-linux-symmetric?tabs=azure-portal%2Cubuntu#install-iot-edge
 ## ubuntu_XE1000_2.0.x (Ubuntu 20)
