@@ -87,5 +87,7 @@ check the file format and size , then install in container
 # pip3 show aiohttp
 # pip3 install aiohttp-sse-client
 ```
+### install aiothhp for ubuntu_XE1000.2.x.x
+pip3 install [aiohttp-3.11.12-cp310-cp310-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.11.12-cp310-cp310-linux_armv7l.whl) 
 ### export aiohttp as whl
 please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-as-whl)  
