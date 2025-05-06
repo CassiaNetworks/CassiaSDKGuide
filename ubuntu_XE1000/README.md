@@ -1,6 +1,7 @@
 ## SSH Remote Login Container
 [Click Here](remote_login.md)
 ## Port Forwarding
+Some ports will, by default, forward traffic to the interior of the container. Refer to the following table for details. Container APP can directly use these ports as service ports and listening ports.
 | Protocol | Port |
 |--|--|
 | TCP | 502 |
