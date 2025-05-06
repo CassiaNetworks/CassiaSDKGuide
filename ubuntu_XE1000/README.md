@@ -1,5 +1,16 @@
 ## SSH Remote Login Container
 [Click Here](remote_login.md)
+## Port Forwarding
+| Protocol | Port |
+|--|--|
+| TCP | 502 |
+| TCP | 655 |
+| UDP | 655 |
+| TCP | 1337 |
+| TCP | 3000 |
+| UDP | 20203 |
+| TCP | 44818 |
+| UDP | 44818 |
 ## ubuntu_XE1000.2.0.1.tar.gz
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
