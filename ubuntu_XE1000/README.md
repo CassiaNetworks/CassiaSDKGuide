@@ -25,6 +25,8 @@ Some ports will, by default, forward traffic to the interior of the container. R
 |--|--|
 | Ubuntu| 20.04.2 LTS |
 | dotnet | 3.1.16 |
+| gcc | 9.3.0-17ubuntu1~20.04 |
+| g++ | 9.3.0-17ubuntu1~20.04 |
 | nodejs | 10.19.0~dfsg-3ubuntu1 |
 | python2 | 2.7.18 |
 | python3 | 3.8.5 |
