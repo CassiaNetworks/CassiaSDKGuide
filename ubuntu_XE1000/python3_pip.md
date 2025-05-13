@@ -77,7 +77,7 @@ to apply the newer whl you build , please remove the older bleak in the system
 ```
 ## TI-SensorTag-CC2650
 ### install aiohttp-sse-client by pip3
-[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) should be used for X1000/E1000/X2000 series, not the offical one. Please download by click [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) or by wget
+[aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) should be used for X1000/E1000/X2000 series, not the offical one. Please download by click [here](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl) or by wget. Only for ubuntu_XE1000.2.0.x
 ```
 # wget https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.9.3-cp38-cp38-linux_armv7l.whl
 ```
@@ -87,5 +87,7 @@ check the file format and size , then install in container
 # pip3 show aiohttp
 # pip3 install aiohttp-sse-client
 ```
+### install aiothhp for ubuntu_XE1000.2.2.x
+Please download by click [aiohttp-3.11.12-cp310-cp310-linux_armv7l.whl](https://raw.githubusercontent.com/CassiaNetworks/CassiaSDKGuide/master/ubuntu_XE1000/pip3_whl/aiohttp-3.11.12-cp310-cp310-linux_armv7l.whl) 
 ### export aiohttp as whl
 please refer to the section [dbus_fast](python3_pip.md#export-dbus_fast-as-whl)  

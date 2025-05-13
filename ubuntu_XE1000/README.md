@@ -1,5 +1,17 @@
 ## SSH Remote Login Container
 [Click Here](remote_login.md)
+## Port Forwarding
+Some ports will, by default, forward traffic to the interior of the container. Refer to the following table for details. Container APP can directly use these ports as service ports and listening ports.
+| Protocol | Port |
+|--|--|
+| TCP | 502 |
+| TCP | 655 |
+| UDP | 655 |
+| TCP | 1337 |
+| TCP | 3000 |
+| UDP | 20203 |
+| TCP | 44818 |
+| UDP | 44818 |
 ## ubuntu_XE1000.2.0.1.tar.gz
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
@@ -13,6 +25,8 @@
 |--|--|
 | Ubuntu| 20.04.2 LTS |
 | dotnet | 3.1.16 |
+| gcc | 9.3.0-17ubuntu1~20.04 |
+| g++ | 9.3.0-17ubuntu1~20.04 |
 | nodejs | 10.19.0~dfsg-3ubuntu1 |
 | python2 | 2.7.18 |
 | python3 | 3.8.5 |
