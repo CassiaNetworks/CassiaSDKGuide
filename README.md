@@ -4,15 +4,15 @@
 | ------------------------------------------------------------ | ---------- | ------------------------------------ |
 | Get Access Token                                | Through AC | [code](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Get-Access-Token)                            |
 | Update Access Token                                | Through AC | [code](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token)                            |
-| Scan  devices from one router                                | Through AC | acScan.js                            |
-| Scan,  connect and get notification for one devices          | Through AC | acNotify.js                          |
-| Scan,  connect from one router for multiple devices          | Through AC | connectDevices.js                    |
-| Scan,  connect and get notification for multiple devices     | Through AC | scanConnectNotify.js                 |
-| Multiple  devices connect to multiple routers                | Through AC | connectDevicesWithMultipleRouters.js |
-| Connect  multiple devices in a batch                         | Through AC | acBatch.js                           |
+| Scan  devices from one router                                | Through AC | acScan.js/py                            |
+| Scan,  connect and get notification for one devices          | Through AC | acNotify.js/py                          |
+| Scan,  connect from one router for multiple devices          | Through AC | connectDevices.js/py                    |
+| Scan,  connect and get notification for multiple devices     | Through AC | scanConnectNotify.js/py                 |
+| Multiple  devices connect to multiple routers                | Through AC | connectDevicesWithMultipleRouters.js/py |
+| Connect  multiple devices in a batch                         | Through AC | acBatch.js/py                           |
 | BLE  device roamming                                         | Through AC | roaming.js                           |
 | Get  room(router) based locationing info for device          | Through AC | roomBasedPosition.js                 |
-| Scan,  connect and get notification for one devices          | Local      | scanConnectNotify(SingleRouter).js   |
+| Scan,  connect and get notification for one devices          | Local      | scanConnectNotify(SingleRouter).js/py   |
 | scan,  connect, collect notification from devices, and send data to custom endpoint | Container  | containerApp                         |
 
 Cassia SDK Implementation Guide
