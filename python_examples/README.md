@@ -11,6 +11,10 @@ This folder contains a number of ready-to-run examples demonstrating various use
 - Configure scan filter
     - The example uses the `filter_mac` parameter to precisely match the device MAC address. 
     - Please adjust according to your actual device.
+- Read/Write Device Operations
+    - You need to modify the handle value according to the actual GATT service list of the device.
+    - Discover device GATT Services API
+        - https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#discover-gatt-services-and-characteristics
 - AC mode
     - Configure the correct developer account and password.
     - Log in to the AC Web -> go to the Settings page -> Developer Account for RESTful APIs.
