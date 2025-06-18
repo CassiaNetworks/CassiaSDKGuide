@@ -20,6 +20,9 @@ DEVELOPER_SECRET = '1q2w#E$R'
 # this is your router's MAC, you should add the router to AC's online list first
 ROUTER_MAC = 'CC:1B:E0:E2:E9:B8'
 
+# this is your device scan filter
+FILTER_MAC = 'CC:0A:19:32:6A:0A'
+
 async def req(session, method, url, headers=None, json_data=None, auth=None):
     async with session.request(method, url, headers=headers, json=json_data, auth=auth) as resp:
         try:
@@ -81,12 +84,11 @@ refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#scan-bl
 """
 async def openScanSse(session, token, routerMac):
     query = {
-        # filter devices whose rssi is below -75, and name begins with 'Cassia',
+        # filter devices whose rssi is below -75, and device MAC is $FILTER_MAC,
         # there are many other filters, you can find them in document
         # use proper filters can significantly reduce traffic between Router and AC
         'filter_rssi': -75,
-        'filter_name': 'Cassia*',
-        'filter_mac': 'CC:0A:19:32:6A:0A',
+        'filter_mac': FILTER_MAC,
         # use active scan, default is passive scan
         # active scan makes devices response with data packet which usually contains device's name
         'active': 1,

@@ -13,6 +13,9 @@ DEVELOPER_SECRET = '1q2w#E$R'
 # this is your router's MAC, you should add the router to AC's online list first
 ROUTER_MAC = 'CC:1B:E0:E2:E9:B8'
 
+# this is your device scan filter
+FILTER_MAC = 'CC:0A:19:32:6A:0A'
+
 is_written = {}
 
 async def req(session, method, url, headers=None, json_data=None, auth=None):
@@ -40,8 +43,7 @@ async def auth(session, key, secret):
 async def open_scan_sse_and_connect(session, token):
     params = {
         'filter_rssi': -75,
-        'filter_name': 'Cassia*',
-        'filter_mac': 'CC:0A:19:32:6A:0A',
+        'filter_mac': FILTER_MAC,
         'active': 1,
         'mac': ROUTER_MAC,
         'access_token': token,

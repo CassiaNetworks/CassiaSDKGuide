@@ -13,6 +13,9 @@ DEVELOPER_SECRET = '1q2w#E$R'
 # this is your router's MAC, you should add the router to AC's online list first
 ROUTER_MAC = 'CC:1B:E0:E2:E9:B8'
 
+# this is your device scan filter
+FILTER_MAC = 'CC:0A:19:32:6A:0A'
+
 async def auth(key, secret):
     url = f"{AC_HOST}/oauth2/token"
     auth = aiohttp.BasicAuth(key, secret)
@@ -51,7 +54,7 @@ async def open_scan(aps, token):
     url = f"{AC_HOST}/aps/scan/open?access_token={token}"
     payload = {
         'aps': aps,
-        'filter_mac': 'CC:0A:19:32:6A:0A',
+        'filter_mac': FILTER_MAC,
         'filter_rssi': -80,
     }
     

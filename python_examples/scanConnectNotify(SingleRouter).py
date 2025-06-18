@@ -16,6 +16,9 @@ to run the code, you should have a Cassia Router
 # remember switching on local API in setting page
 HOST = 'http://10.100.176.164'
 
+# this is your device scan filter
+FILTER_MAC = 'CC:0A:19:32:6A:0A'
+
 # convert http request to promise
 async def req(options):
     async with aiohttp.ClientSession() as session:
@@ -69,13 +72,12 @@ Nodejs library 'eventsource' handle the SSE reconnection automatically. For othe
 async def open_scan_sse():
     query = {
         """
-        filter devices whose rssi is below -75, and name begins with 'Cassia',
+        filter devices whose rssi is below -75, and device MAC is $FILTER_MAC,
         there are many other filters, you can find them in document
         use proper filters can significantly reduce traffic between Router and AC
         """
         'filter_rssi': -75,
-        'filter_name': 'Cassia*',
-        'filter_mac': 'CC:0A:19:32:6A:0A',
+        'filter_mac': FILTER_MAC,
         """
         use active scan, default is passive scan
         active scan makes devices response with data packet which usually contains device's name
