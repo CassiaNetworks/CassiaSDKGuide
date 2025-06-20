@@ -2,13 +2,24 @@ const request = require('request');
 const EventSource = require('eventsource');
 const qs = require('querystring');
 
-const AC_HOST = 'http://192.168.0.226/api';
+/*
+ * replace it with your AC address base URL
+ */
+const AC_BASE_URL = 'http://192.168.0.226';
+
+/*
+ * you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
+ */
 const DEVELOPER_KEY = 'cassia';
 const DEVELOPER_SECRET = 'cassia';
+
 let GATEWAYS = [
   // 'CC:1B:E0:E0:05:B8',
 ];
+
 const TEST_INTERVAL = 5000;
+
+const AC_HOST = `${AC_BASE_URL}/api`;
 
 function auth(key, secret) {
   let options = {

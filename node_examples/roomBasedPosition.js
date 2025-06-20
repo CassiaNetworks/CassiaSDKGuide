@@ -8,9 +8,9 @@ const EventSource = require('eventsource');
 const qs = require('querystring');
 
 /*
- * replace it with your AC address
+ * replace it with your AC address base URL
  */
-const AC_HOST = 'https://192.168.0.226/api';
+const AC_BASE_URL = 'https://192.168.0.226';
 
 /*
  * you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
@@ -22,6 +22,8 @@ const DEVELOPER_SECRET = 'cassia';
  * this is your router's MAC, you should add the router to AC's online list first
  */
 const ROUTER_MAC = 'CC:1B:E0:E0:05:B8';
+
+const AC_HOST = `${AC_BASE_URL}/api`;
 
 // convert http request to promise
 function req(options) {

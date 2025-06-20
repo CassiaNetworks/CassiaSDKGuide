@@ -7,9 +7,9 @@ const request = require('request');
 const EventSource = require('eventsource');
 
 /*
- * replace it with your AC address
+ * replace it with your AC address base URL
  */
-const AC_HOST = 'http://q1.lunxue.cc/api';
+const AC_BASE_URL = 'http://q1.lunxue.cc';
 
 /*
  * you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
@@ -21,6 +21,8 @@ const DEVELOPER_SECRET = 'cassia';
  * this is your router's MAC, you should add the router to AC's online list first
  */
 const DEVICE_MAC = '**:**:**:**:**:**';
+
+const AC_HOST = `${AC_BASE_URL}/api`;
 
 // convert http request to promise
 function req(options) {

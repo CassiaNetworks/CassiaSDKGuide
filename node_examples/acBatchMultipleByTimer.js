@@ -8,9 +8,9 @@ const EventSource = require('eventsource');
 const qs = require('querystring');
 
 /*
- * replace it with your AC address
+ * replace it with your AC address base URL
  */
-const AC_HOST = 'http://10.100.166.221/api';
+const AC_BASE_URL = 'http://10.100.166.221';
 
 /*
  * you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
@@ -28,6 +28,8 @@ const ROUTER_MAC = 'CC:1B:E0:E2:8F:2C';
  * try to ensure that as many devices as possible can be scanned in the minimum time
  */
 const BATCH_CONN_INTERVAL = 2000;
+
+const AC_HOST = `${AC_BASE_URL}/api`;
 
 const isWritten = {};
 let scanDevices = {};

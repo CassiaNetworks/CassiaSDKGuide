@@ -10,8 +10,8 @@ use Cassia AC APIs, refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki
 to run the code, you should have a Cassia Router connected to a Cassia AC
 """
 
-# replace it with your AC address
-AC_HOST = 'http://10.100.144.168:8882/api'
+# replace it with your AC address base URL
+AC_BASE_URL = 'http://10.100.144.168'
 
 # you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
 DEVELOPER_KEY = 'admin1'
@@ -22,6 +22,8 @@ ROUTER_MAC = 'CC:1B:E0:E2:E9:B8'
 
 # this is your device scan filter
 FILTER_MAC = 'CC:0A:19:32:6A:0A'
+
+AC_HOST = f'{AC_BASE_URL}/api'
 
 async def req(session, method, url, headers=None, json_data=None, auth=None):
     async with session.request(method, url, headers=headers, json=json_data, auth=auth) as resp:

@@ -67,21 +67,16 @@ Sever-Sent Event(SSE) is used in scan, connection-state and notify of Cassia RES
 SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
 API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
 User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
-Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
 """
 async def open_scan_sse():
     query = {
-        """
-        filter devices whose rssi is below -75, and device MAC is $FILTER_MAC,
-        there are many other filters, you can find them in document
-        use proper filters can significantly reduce traffic between Router and AC
-        """
+        # filter devices whose rssi is below -75, and device MAC is $FILTER_MAC,
+        # there are many other filters, you can find them in document
+        # use proper filters can significantly reduce traffic between Router and AC
         'filter_rssi': -75,
         'filter_mac': FILTER_MAC,
-        """
-        use active scan, default is passive scan
-        active scan makes devices response with data packet which usually contains device's name
-        """
+        # use active scan, default is passive scan
+        # active scan makes devices response with data packet which usually contains device's name
         'active': 1
     }
     url = f"{HOST}/gap/nodes?event=1&{'&'.join(f'{k}={v}' for k,v in query.items())}"
@@ -149,7 +144,6 @@ Sever-Sent Event(SSE) is used in scan, connection-state and notify of Cassia RES
 SSE spec: https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface
 API will send ':keep-alive' every 30 seconds in SSE connection for user to check if the connection is active or not.
 User need to call Cassia RESTful API to reconnect SSE in case that the connection is termincated abnormally, such as keep-alive lost, socket error, network problem, etc.
-Nodejs library 'eventsource' handle the SSE reconnection automatically. For other lanuages, the reconnection may needs to be handled by users application.
 """
 async def open_notify_sse():
     url = f"{HOST}/gatt/nodes"

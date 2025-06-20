@@ -5,9 +5,9 @@ import json
 from aiohttp_sse_client import client as sse_client_async
 
 """
-replace it with your AC address
+replace it with your AC address base URL
 """
-AC_HOST = 'http://10.100.144.168:8882/api'
+AC_BASE_URL = 'http://10.100.144.168'
 
 """
 you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
@@ -20,6 +20,8 @@ this is your router's MAC, you should add the router to AC's online list first
 """
 ROUTER_MAC = 'CC:1B:E0:E2:E9:B8'
 DEVICE_MAC = 'CC:0A:19:32:6A:0A'
+
+AC_HOST = f'{AC_BASE_URL}/api'
 
 async def req(session, method, url, headers=None, json_data=None):
     async with session.request(method, url, headers=headers, json=json_data) as resp:

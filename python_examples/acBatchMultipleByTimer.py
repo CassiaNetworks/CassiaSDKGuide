@@ -10,8 +10,8 @@ use Cassia AC APIs, refer: https://github.com/CassiaNetworks/CassiaSDKGuide/wiki
 to run the code, you should have a Cassia Router connected to a Cassia AC
 """
 
-# replace it with your AC address
-AC_HOST = 'http://10.100.144.168:8882/api'
+# replace it with your AC address base URL
+AC_BASE_URL = 'http://10.100.144.168'
 
 # you can set your developer key and secret under AC -> Settings -> Developer account for RESTful APIs
 DEVELOPER_KEY = 'admin1'
@@ -26,6 +26,8 @@ FILTER_MAC = 'CC:0A:19:32:6A:0A'
 # batch connection period, please determine according to the specific broadcast period of the device,
 # try to ensure that as many devices as possible can be scanned in the minimum time
 BATCH_CONN_INTERVAL = 2000
+
+AC_HOST = f'{AC_BASE_URL}/api'
 
 is_written = {}
 scan_devices = {}
