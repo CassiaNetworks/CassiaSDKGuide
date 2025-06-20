@@ -90,7 +90,7 @@ async def open_scan_sse(session, token, router_mac):
         # filter devices whose rssi is below -75, and name begins with 'Cassia',
         # there are many other filters, you can find them in document
         # use proper filters can significantly reduce traffic between Router and AC
-        'filter_rssi': -55,
+        'filter_rssi': -75,
         'filter_mac': FILTER_MAC,
         
         # use active scan, default is passive scan
