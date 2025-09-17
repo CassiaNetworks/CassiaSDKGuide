@@ -8,16 +8,17 @@ This is an example program to collect SSE scanned advertisement data from the ro
 and process the adData from the packet JSON.
 """
 
-def start(stream_thread, url, output_file):
+def start(url, output_file):
     """Starts streaming and processing scores data."""
     stream_thread = SSEDataThread(url, output_file)
     stream_thread.daemon = True
     stream_thread.start()
+    return stream_thread
 
 
 def stop(stream_thread):
     """Stops streaming and processing scores data."""
-    if stream_thread and stream_thread.isAlive():
+    if stream_thread and stream_thread.is_alive():
         stream_thread.stop() # Set internal event flag to True to kill thread.
         stream_thread.join() # Make sure thread finishes before continuing with main thread.
 
@@ -29,10 +30,12 @@ def main():
     #url = router_address + "/gap/nodes?event=1&mac=" + mac_address  # The mac parameter is optional here.
     url = router_address + "/gap/nodes?event=1"
     output_file = open("example_output.txt", "a")
-    start(stream_thread, url, output_file)
+    stream_thread = start(url, output_file)
     print("Collecting and processing packet data for 10 seconds.")
-    time.sleep(30)
+    time.sleep(10)
     stop(stream_thread)
+    print("Collecting Stopped.")
+    time.sleep(2)
 
 
 if __name__ == "__main__":
