@@ -15,6 +15,7 @@ class SSEDataThread(threading.Thread):
         self._kill = threading.Event()
         self._url = url
         self._outfile = f
+        self._client = None
 
     def _is_json(self, myjson):
         try:
@@ -39,12 +40,13 @@ class SSEDataThread(threading.Thread):
 
     def _stream_threader(self):
         """Function to run on each new SSEDataThread."""
-        client_events = sseclient.SSEClient(self._url)
-        self._stream_and_collect_packet_addata(client_events)
+        self._client = sseclient.SSEClient(self._url)
+        self._stream_and_collect_packet_addata(self._client)
 
     def stop(self):
         """Stops SSEDataThread by setting kill Event flag."""
-        if not self._kill.is_set():
-            self._kill.set()
+        self._kill.set()
         self._outfile.close()
+        if self._client and self._client.resp:
+            self._client.resp.close()
 

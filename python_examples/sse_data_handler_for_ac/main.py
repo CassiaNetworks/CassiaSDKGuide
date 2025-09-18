@@ -13,11 +13,12 @@ def start(stream_thread, url, output_file):
     stream_thread = SSEDataThread(url, output_file)
     stream_thread.daemon = True
     stream_thread.start()
+    return stream_thread
 
 
 def stop(stream_thread):
     """Stops streaming and processing scores data."""
-    if stream_thread and stream_thread.isAlive():
+    if stream_thread and stream_thread.is_alive():
         stream_thread.stop() # Set internal event flag to True to kill thread.
         stream_thread.join() # Make sure thread finishes before continuing with main thread.
 
@@ -29,7 +30,7 @@ def main():
     ac_address = "http://demo.cassia.pro"
     url = ac_address + "/api/gap/nodes?event=1&mac=" + mac_address + "&access_token=" + access_token
     output_file = open("example_output.txt", "a")
-    start(stream_thread, url, output_file)
+    stream_thread = start(url, output_file)
     print("Collecting and processing packet data for 10 seconds.")
     time.sleep(10)
     stop(stream_thread)

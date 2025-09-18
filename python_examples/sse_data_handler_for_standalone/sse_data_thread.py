@@ -47,5 +47,6 @@ class SSEDataThread(threading.Thread):
         """Stops SSEDataThread by setting kill Event flag."""
         self._kill.set()
         self._outfile.close()
-        self._client.resp.close()
+        if self._client and self._client.resp:
+            self._client.resp.close()
 
