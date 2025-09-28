@@ -3,10 +3,9 @@ import struct
 
 from cassia_log import get_logger
 from waiter_manager import WaiterManager
+from action_model import MqttData, NotifyData, ScanData
 from profile_model import Model
 from task_entry import DeviceTaskEntry
-from cassiablue_manager import NotifyData, ScanData
-from mqtt import MqttData
 
 
 class CassiaDeviceParsedScanData(MqttData):

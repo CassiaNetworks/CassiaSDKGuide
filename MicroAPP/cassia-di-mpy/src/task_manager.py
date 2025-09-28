@@ -6,6 +6,7 @@ import collections
 from cassia_uuid import uuid4
 from cassia_log import get_logger
 from cassiablue_manager import CassiaBlueManager
+from action_model import MqttData
 from profile_model import DeviceActionResponse
 from profile_model import DeviceActionResData
 from profile_model import DeviceActionResDataBody
@@ -18,7 +19,7 @@ from task_entry import TaskResult
 from task_entry import TaskResultRecord
 from task_entry import DeviceTaskEntry
 
-from mqtt import MqttModule, MqttData
+from cassia_mqtt import MqttModule
 
 try:
     from typing import Dict, Optional, Any, Deque, List
@@ -224,80 +225,90 @@ class DeviceTaskQueueManager:
         return reason in NEED_RETRY_ERRORS
 
     async def _select_task_and_execute(self, device_queue: DeviceTaskQueue):
-        async with device_queue._lock:
-            if not device_queue.queue:
-                self.log.warn(f"select device task, no task: {device_queue.device_mac}")
+        try:
+            async with device_queue._lock:
+                if not device_queue.queue:
+                    self.log.warn(
+                        f"select device task, no task: {device_queue.device_mac}"
+                    )
+                    return
+
+                task = device_queue.queue.popleft()
+                device_mac = device_queue.device_mac
+
+            task_id = task.meta.id
+            self.log.info(f"select task one: {task_id} {device_mac}")
+
+            if task.state == State.DONE:
+                self.log.info(
+                    f"select task fail, task has done: {task.meta.device_mac}"
+                )
                 return
 
-            task = device_queue.queue.popleft()
-            device_mac = device_queue.device_mac
+            self.log.info(f"select task ok: {task_id} {device_mac}")
 
-        task_id = task.meta.id
-        self.log.info(f"select task one: {task_id} {device_mac}")
+            self._set_task_running(task)
 
-        if task.state == State.DONE:
-            self.log.info(f"select task fail, task has done: {task.meta.device_mac}")
-            return
-
-        self.log.info(f"select task ok: {task_id} {device_mac}")
-
-        self._set_task_running(task)
-
-        async with device_queue._lock:
-            device_queue.current = task
-
-        if self._is_task_timeout(task):
             async with device_queue._lock:
-                await self.set_task_fail_with_reason(
-                    task, Error.TASK_TIMEOUT_BY_SCHEDULER
-                )
-                device_queue.current = None
-            return
+                device_queue.current = task
 
-        self.log.info(
-            f"task do profile execute start: {task.meta.id} {task.meta.device_mac}"
-        )
+            if self._is_task_timeout(task):
+                async with device_queue._lock:
+                    await self.set_task_fail_with_reason(
+                        task, Error.TASK_TIMEOUT_BY_SCHEDULER
+                    )
+                    device_queue.current = None
+                return
 
-        result: Any = None
-        try:
-            profile = self.profile_mgr.get_model(task.meta.model)
             self.log.info(
-                "get model done:",
-                task.meta.model,
-                profile,
-                self.profile_mgr.models,
+                f"task do profile execute start: {task.meta.id} {task.meta.device_mac}"
             )
-            if profile is None:
-                raise Exception("model not supported")
 
-            result = await profile.execute(task)
+            result: Any = None
+            try:
+                profile = self.profile_mgr.get_model(task.meta.model)
+                self.log.info(
+                    "get model done:",
+                    task.meta.model,
+                    profile,
+                    self.profile_mgr.models,
+                )
+                if profile is None:
+                    raise Exception("model not supported")
 
+                result = await profile.execute(task)
+
+            except Exception as e:
+                self.log.warn("!!!sys print exception!!!")
+                sys.print_exception(e)
+                result = e
+
+            if isinstance(result, Exception):
+                reason = str(result) if result.args else str(result)
+
+                if reason in task.fails:
+                    task.fails[reason] += 1
+                else:
+                    task.fails[reason] = 1
+
+                if self._need_retry_error(reason):
+                    task.state = State.WAITING
+                    self.log.info(f"is task need retry error: {task.meta.id} {reason}")
+                    await self._add_task_to_queue(task, True)
+                else:
+                    await self.set_task_fail_with_reason(task, reason)
+
+                async with device_queue._lock:
+                    device_queue.current = None
+            else:
+                self.log.info(f"===set task start: {task_id} {device_mac}")
+                await self.set_task_success(task, result)
+                self.log.info(f"===set task success: {task_id} {device_mac}")
+                async with device_queue._lock:
+                    device_queue.current = None
         except Exception as e:
-            self.log.warn("!!!sys print exception!!!")
+            self.log.warn(f"!!!_select_task_and_execute exception!!! {e}")
             sys.print_exception(e)
-            result = e
-
-        if isinstance(result, Exception):
-            reason = str(result) if result.args else str(result)
-
-            if reason in task.fails:
-                task.fails[reason] += 1
-            else:
-                task.fails[reason] = 1
-
-            if self._need_retry_error(reason):
-                task.state = State.WAITING
-                self.log.info(f"is task need retry error: {task.meta.id} {reason}")
-                await self._add_task_to_queue(task, True)
-            else:
-                await self.set_task_fail_with_reason(task, reason)
-
-            async with device_queue._lock:
-                device_queue.current = None
-        else:
-            await self.set_task_success(task, result)
-            async with device_queue._lock:
-                device_queue.current = None
 
     async def _scheduler(self):
         self.log.info("scheduler handler start")

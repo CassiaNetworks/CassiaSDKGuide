@@ -3,17 +3,13 @@ import json
 
 from cassia_log import get_logger
 from meta import MetaConfigManager
+from action_model import MqttData
 from mqtt_as import MQTTClient
 
 try:
     from typing import Dict
 except ImportError:
     pass
-
-
-class MqttData:
-    def to_dict(self) -> Dict:
-        raise NotImplementedError
 
 
 class MqttModule:

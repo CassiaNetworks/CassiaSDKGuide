@@ -101,6 +101,8 @@ class Config:
 class MqttTopics:
     def __init__(
         self,
+        heartbeat: str,
+        gateway_status: str,
         scan: str,
         notify: str,
         state: str,
@@ -109,6 +111,8 @@ class MqttTopics:
         unicast: str,
         broadcast: str,
     ):
+        self.heartbeat = heartbeat
+        self.gateway_status = gateway_status
         self.scan = scan
         self.notify = notify
         self.state = state
@@ -128,6 +132,8 @@ class MetaConfigManager:
         gateway = self.config.gateway_mac
 
         self.topics = MqttTopics(
+            heartbeat=f"{prefix}/up/{gateway}/heartbeat",
+            gateway_status=f"{prefix}/up/{gateway}/gateway_status",
             scan=f"{prefix}/up/{gateway}/scan",
             notify=f"{prefix}/up/{gateway}/notification",
             state=f"{prefix}/up/{gateway}/connection_state",

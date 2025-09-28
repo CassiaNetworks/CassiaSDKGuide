@@ -3,7 +3,7 @@ try:
 except ImportError:
     pass
 
-from cassiablue_manager import ScanData, NotifyData
+from action_model import ScanData, NotifyData
 from task_entry import DeviceTaskEntry
 
 

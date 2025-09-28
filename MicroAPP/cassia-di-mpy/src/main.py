@@ -10,7 +10,9 @@ from meta import MetaConfigManager
 from cassiablue_manager import CassiaBlueManager
 from task_manager import DeviceTaskQueueManager
 from bypass import MessageDispatcher
-from mqtt import MqttModule
+from cassia_mqtt import MqttModule
+from heartbeat import Heartbeat
+from gateway_status import GatewayStatus
 from http_server import HttpServer
 
 
@@ -19,6 +21,9 @@ async def main():
     log.info("==========================")
     log.info("        App start         ")
     log.info("==========================")
+
+    loop = asyncio.get_event_loop()
+    loop.set_exception_handler(lambda _l, ctx: log.error(f"!!!task exception!!! {ctx}"))
 
     co_tasks = []
 
@@ -42,7 +47,6 @@ async def main():
     profile_mgr.add_model(cassia_device)
 
     mqtt = MqttModule(meta_mgr=meta_mgr)
-    await mqtt.start()
 
     cassiablue_mgr = CassiaBlueManager(
         meta_mgr=meta_mgr,
@@ -70,23 +74,28 @@ async def main():
 
     mqtt.set_dispatcher(msg_dsp.dispatcher)
 
-    http_srv = HttpServer(
-        meta_mgr=meta_mgr,
-    )
+    http_srv = HttpServer(meta_mgr=meta_mgr)
+    gateway_status = GatewayStatus(meta_mgr=meta_mgr, mqtt=mqtt)
+    heartbeat = Heartbeat(meta_mgr=meta_mgr, mqtt=mqtt)
 
     co_tasks.extend(cassiablue_mgr.co_tasks())
     co_tasks.extend(task_mgr.co_tasks())
     co_tasks.extend(mqtt.co_tasks())
+    co_tasks.extend(heartbeat.co_tasks())
 
     """
     Linux/MacOS不支持，否则发送HTTP请求时会导致segment fault
     目前已知的情况是asyncio.start_server和asyncio.open_connection冲突
     """
     if sys.platform == "esp32":
+        co_tasks.extend(gateway_status.co_tasks())
         co_tasks.extend(http_srv.co_tasks())
 
     await asyncio.gather(*co_tasks)
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except Exception as e:
+        print(f"!!! app run exception!!! {e}")

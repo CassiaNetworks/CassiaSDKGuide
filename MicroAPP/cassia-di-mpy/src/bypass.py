@@ -4,14 +4,18 @@ import asyncio
 
 from cassia_log import get_logger
 from error import Error
+
 from meta import MetaConfigManager
 from meta import FORWORD_RAW_SCAN_ON
 from meta import FORWORD_RAW_NOTIFY_ON
+
 from waiter_manager import WaiterManager
-from cassiablue_manager import ScanData
-from cassiablue_manager import ScanDataParsed
-from cassiablue_manager import NotifyData
-from cassiablue_manager import ConnectionStateData
+
+from action_model import ActionData
+from action_model import ScanData
+from action_model import ScanDataParsed
+from action_model import NotifyData
+from action_model import ConnectionStateData
 
 from task_entry import TaskMeta, State
 from task_manager import DeviceTaskQueueManager
@@ -21,50 +25,12 @@ from profile_model import DeviceActionResponse
 from profile_model import DeviceActionResData
 
 from profile_manager import ProfileManager
-from mqtt import MqttModule
-from mqtt import MqttData
+from cassia_mqtt import MqttModule
 
 try:
-    from typing import List, Union, Dict, Any, Optional
+    from typing import List, Union, Dict, Any
 except ImportError:
     pass
-
-
-class ActionData(MqttData):
-    def __init__(
-        self,
-        id: str,
-        action: str,
-        timestamp: int,
-        gateway: str,
-        data: Union[
-            List[ScanData],
-            List[ScanDataParsed],
-            List[NotifyData],
-            List[ConnectionStateData],
-            # "Heartbeat",
-            # "GatewayStatus",
-            None,
-        ] = None,
-    ):
-        self.id = id
-        self.action = action
-        self.timestamp = timestamp
-        self.gateway = gateway
-        self.data = data
-
-    def to_dict(self) -> dict:
-        data_dict = None
-        if self.data is not None:
-            data_dict = [x.to_dict() for x in self.data]
-
-        return {
-            "id": self.id,
-            "action": self.action,
-            "timestamp": self.timestamp,
-            "gateway": self.gateway,
-            "data": data_dict,
-        }
 
 
 class MessageDispatcher:
@@ -162,7 +128,7 @@ class MessageDispatcher:
                 data=[notify_data],
             )
 
-            await self.mqtt.pub(self.meta_mgr.topics.notify, message, qos=1)
+            await self.mqtt.pub(self.meta_mgr.topics.notify, message)
 
         device_mac = notify["id"]
         current_task = await self.task_mgr.get_current_task(device_mac)
@@ -195,7 +161,7 @@ class MessageDispatcher:
             data=[state_data],
         )
 
-        await self.mqtt.pub(self.meta_mgr.topics.state, message, qos=1)
+        await self.mqtt.pub(self.meta_mgr.topics.state, message)
 
         if state_data.connection_state != "disconnected":
             return
@@ -218,7 +184,6 @@ class MessageDispatcher:
         self.waiter_mgr.end_by_id_prefix(current_task.meta.id, error)
 
     async def dispatcher(self, topic: str, msg: str, retained: bool):
-
         try:
             parsed_msg = json.loads(msg)
 
