@@ -3,6 +3,7 @@ import json
 import time
 import gc
 
+import cassiasys
 import cassiablue
 
 from cassia_log import get_logger
@@ -43,7 +44,7 @@ class GatewayStatus:
         id = 0
 
         data = GatewayStatusData(
-            model=cassiablue._gateway_type,
+            model=cassiasys.gateway_type(),
             version="",
             uptime=0,
             free_memory=0,
@@ -57,7 +58,7 @@ class GatewayStatus:
             id=str(id),
             action="gateway_status",
             timestamp=int(time.time() * 1000),
-            gateway=cassiablue._gateway_mac,
+            gateway=cassiasys.gateway_mac(),
             data=data,
         )
 
@@ -68,7 +69,7 @@ class GatewayStatus:
             id += 1
             message.id = str(id)
 
-            message.data.version = cassiablue._gateway_ver
+            message.data.version = cassiasys.gateway_ver()
             _ok, info = await self.get_cassia_info()
             message.data.uptime = info.get("uptime", 0)
 

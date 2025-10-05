@@ -1,4 +1,4 @@
-import cassiablue
+import cassiasys
 
 from cassia_log import get_logger
 
@@ -43,7 +43,7 @@ class Config:
     def __init__(
         self,
         http_port: str = "60000",
-        gateway_mac: str = cassiablue._gateway_mac,
+        gateway_mac: str = cassiasys.gateway_mac(),
         mqtt_topic_prefix: str = "/dev",
         scan_filter_name: str = "cassia-device*",
         scan_filter_mac: str = "",

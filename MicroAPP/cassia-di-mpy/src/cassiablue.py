@@ -1,8 +1,8 @@
 """
-Module name: cassiablue.py  
-Purpose: Local MicroPython debugging mock. Exposes the same high-level API as the real gateway by forwarding calls to its REST + Server-Sent-Events interface, so you can develop and test your MicroPython logic on a PC without flashing firmware.  
-MicroPython compatibility: v1.24.1  
-Important: Do **not** copy this file into the gateway itself—the gateway already contains a native C implementation. This module is **only** for convenient desktop debugging and has no performance guarantees.  
+Module name: cassiablue.py
+Purpose: Local MicroPython debugging mock. Exposes the same high-level API as the real gateway by forwarding calls to its REST + Server-Sent-Events interface, so you can develop and test your MicroPython logic on a PC without flashing firmware.
+MicroPython compatibility: v1.24.1
+Important: Do **not** copy this file into the gateway itself—the gateway already contains a native C implementation. This module is **only** for convenient desktop debugging and has no performance guarantees.
 Usage: Change the variable `GATEWAY` to the actual IP address of your gateway.
 """
 
@@ -21,10 +21,6 @@ except ImportError:
 
 
 log = get_logger("__mock_cassiablue__")
-
-_gateway_type = "M2000"
-_gateway_mac = "00:00:00:00:00:00"
-_gateway_ver = ""
 
 
 class AsyncQueue:
@@ -139,7 +135,7 @@ class SSEClient:
         )
         self.writer.write(req.encode())
         await self.writer.drain()
-        self.log.info(f"connect to sse ok")
+        self.log.info(f"connect to sse ok: {self.host}{self.path}")
 
     async def co_read(self):
         while self.running:

@@ -1,7 +1,7 @@
 import asyncio
 import time
 
-import cassiablue
+import cassiasys
 
 from cassia_log import get_logger
 from meta import MetaConfigManager
@@ -28,7 +28,7 @@ class Heartbeat:
             id=str(id),
             action="heartbeat",
             timestamp=int(time.time() * 1000),
-            gateway=cassiablue._gateway_mac,
+            gateway=cassiasys.gateway_mac(),
             data=data,
         )
 
