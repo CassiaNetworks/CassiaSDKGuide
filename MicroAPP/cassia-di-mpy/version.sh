@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 NAME=cassia_di_mpy
-VER=0.1.1
+VER=0.1.3
 NAME_VER=$NAME.$VER
 
 echo "========================================"

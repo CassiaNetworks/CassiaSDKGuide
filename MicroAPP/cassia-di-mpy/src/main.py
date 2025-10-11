@@ -23,7 +23,7 @@ async def main():
     log.info("==========================")
 
     loop = asyncio.get_event_loop()
-    loop.set_exception_handler(lambda _l, ctx: log.error(f"!!!task exception!!! {ctx}"))
+    loop.set_exception_handler(lambda _l, ctx: log.error(f"!!!app exception!!! {ctx}"))
 
     co_tasks = []
 

@@ -1,0 +1,37 @@
+.cassia-tooltip-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cassia-tooltip-marker {
+    margin-left: 3px;
+    font-weight: lighter;
+    background: #e5e7ed;
+    width: 17px;
+    height: 17px;
+    border-radius: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 10px !important;
+    cursor: pointer
+}
+
+.cassia-tooltip-content {
+    margin-left: 10px;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cassia-tooltip-content a, .cassia-tooltip-content a:visited, .cassia-tooltip-content a:hover {
+    color: #2d8cff;
+    font-weight: normal;
+}

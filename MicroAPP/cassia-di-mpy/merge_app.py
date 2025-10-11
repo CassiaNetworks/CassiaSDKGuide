@@ -27,6 +27,7 @@ FILES = [
     "./src/task_manager.py",
     "./src/cassia_device.py",
     "./src/bypass.py",
+    "./src/http_static.py",
     "./src/http_server.py",
     "./src/main.py",
 ]
@@ -49,8 +50,8 @@ def main():
                 dst.write("#=============================\n")
 
                 for line in src:
-                    if line.startswith("from "):
-                        module_name = line.split(" ")[1]
+                    if line.strip().startswith("from "):
+                        module_name = line.strip().split(" ")[1]
                         if module_name in includes:
                             dst.write(f"#{line}")
                         else:

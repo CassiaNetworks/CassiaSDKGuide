@@ -7,6 +7,8 @@ MERGE_PY=$NAME_VER.py
 MIN_PY=$NAME_VER.min.py
 MPY=$NAME_VER.mpy
 
+source build_fe.sh
+
 micropython merge_app.py "$MERGE_PY"
 echo ""
 echo "merge src ok -> $MERGE_PY"

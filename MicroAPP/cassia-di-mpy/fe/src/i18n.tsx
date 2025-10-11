@@ -1,0 +1,150 @@
+
+export const T = {
+    // UI通用定义
+    ON: 1,
+    OFF: 2,
+    HOST: 3,
+    PORT: 4,
+    USERNAME: 5,
+    PASSWORD: 6,
+    DEFAULT: 7,
+    ALL: 8,
+    MILLISECOND: 9,
+    AUTO: 10,
+    TIMEOUT: 11,
+    SAVE: 12,
+    SAVE_AND_REBOOT: 13,
+
+    // 动态提示
+    OPERATION_OK: 101,
+    OPERATION_FAIL: 102,
+
+    SAVE_OK_NOTIFY: 151,
+
+    // UI定义
+    APP_DATA_FORWARD: 201,
+    MQTT_BROKER: 202,
+    GATEWAY_SCAN_CONFIG: 203,
+    GATEWAY_CONN_CONFIG: 204,
+    GATEWAY_MORE_CONFIG: 205,
+    MORE_OPERATIONS: 206,
+    DATA_FORWARD_PROTOCOL: 207,
+    RAW_SCAN_DATA: 208,
+    RAW_NOTIFY_DATA: 209,
+    TOPIC_PREFIX: 210,
+    SCAN_MODE: 211,
+    SCAN_MODE_PASSIVE: 212,
+    SCAN_MODE_ACTIVE: 213,
+    SCAN_CHIP: 214,
+    FILTER_MAC: 215,
+    FILTER_NAME: 216,
+    FILTER_RSSI: 217,
+    FILTER_DUP: 218,
+    REPORT_INTERVAL: 219,
+    CONN_CHIP: 220,
+    FAIL_RETRY: 221,
+    NO_RETRY: 222,
+    BLE5_PROTOCOL: 223,
+};
+
+export const LANG = {
+    CN: 'cn',
+    EN: 'en',
+};
+
+const LANGS = {
+    [LANG.CN]: {
+        [T.ON]: "开启",
+        [T.OFF]: "关闭",
+        [T.HOST]: "主机",
+        [T.PORT]: "端口",
+        [T.USERNAME]: "用户名",
+        [T.PASSWORD]: "密码",
+        [T.DEFAULT]: "缺省",
+        [T.ALL]: "全部",
+        [T.MILLISECOND]: "毫秒",
+        [T.AUTO]: "自动分配",
+        [T.TIMEOUT]: "超时时间",
+        [T.SAVE]: "保存",
+        [T.SAVE_AND_REBOOT]: "保存&重启",
+
+        [T.OPERATION_OK]: "操作成功！",
+        [T.OPERATION_FAIL]: "操作失败！",
+
+        [T.SAVE_OK_NOTIFY]: "保存成功，正在重启网关...",
+
+        [T.APP_DATA_FORWARD]: "APP数据转发",
+        [T.MQTT_BROKER]: "MQTT中继",
+        [T.GATEWAY_SCAN_CONFIG]: "网关扫描配置",
+        [T.GATEWAY_CONN_CONFIG]: "网关连接配置",
+        [T.GATEWAY_MORE_CONFIG]: "网关BLE5配置",
+        [T.MORE_OPERATIONS]: "更多操作",
+
+        [T.DATA_FORWARD_PROTOCOL]: "数据转发协议",
+        [T.RAW_SCAN_DATA]: "原始广播数据",
+        [T.RAW_NOTIFY_DATA]: "原始通知数据",
+        [T.TOPIC_PREFIX]: "主题前缀",
+        [T.SCAN_MODE]: "扫描模式",
+        [T.SCAN_MODE_PASSIVE]: "被动",
+        [T.SCAN_MODE_ACTIVE]: "主动",
+        [T.SCAN_CHIP]: "扫描芯片",
+        [T.FILTER_MAC]: "MAC过滤",
+        [T.FILTER_NAME]: "Name过滤",
+        [T.FILTER_RSSI]: "RSSI过滤",
+        [T.FILTER_DUP]: "重复过滤",
+        [T.REPORT_INTERVAL]: "周期过滤",
+        [T.CONN_CHIP]: "连接芯片",
+        [T.FAIL_RETRY]: "失败重试",
+        [T.NO_RETRY]: "不重试",
+        [T.BLE5_PROTOCOL]: "BLE5协议",
+    },
+    [LANG.EN]: {
+        [T.ON]: "ON",
+        [T.OFF]: "OFF",
+        [T.HOST]: "Host",
+        [T.PORT]: "Port",
+        [T.USERNAME]: "Username",
+        [T.PASSWORD]: "Password",
+        [T.DEFAULT]: "DEFAULT",
+        [T.ALL]: "ALL",
+        [T.MILLISECOND]: "ms",
+        [T.AUTO]: "AUTO",
+        [T.TIMEOUT]: "Timeout",
+        [T.SAVE]: "Save",
+        [T.SAVE_AND_REBOOT]: "Save & Reboot",
+
+        [T.OPERATION_OK]: "Operation successful!",
+        [T.OPERATION_FAIL]: "Operation failed!",
+
+        [T.SAVE_OK_NOTIFY]: "Save successful, restarting gateway...",
+
+        [T.APP_DATA_FORWARD]: "APP Data Forwarding",
+        [T.MQTT_BROKER]: "MQTT Broker",
+        [T.GATEWAY_SCAN_CONFIG]: "Gateway Scan Configuration",
+        [T.GATEWAY_CONN_CONFIG]: "Gateway Connection Configuration",
+        [T.GATEWAY_MORE_CONFIG]: "Gateway BLE5 Configuration",
+        [T.MORE_OPERATIONS]: "More Actions",
+
+        [T.DATA_FORWARD_PROTOCOL]: "Data Forwarding Protocol",
+        [T.RAW_SCAN_DATA]: "Raw Advertising Data",
+        [T.RAW_NOTIFY_DATA]: "Raw Notification Data",
+        [T.TOPIC_PREFIX]: "Topic Prefix",
+        [T.SCAN_MODE]: "Scan Mode",
+        [T.SCAN_MODE_PASSIVE]: "Passive",
+        [T.SCAN_MODE_ACTIVE]: "Active",
+        [T.SCAN_CHIP]: "Scan Chip",
+        [T.FILTER_MAC]: "MAC Filter",
+        [T.FILTER_NAME]: "Name Filter",
+        [T.FILTER_RSSI]: "RSSI Filter",
+        [T.FILTER_DUP]: "Duplicate Filter",
+        [T.REPORT_INTERVAL]: "Report Interval",
+        [T.CONN_CHIP]: "Connection Chip",
+        [T.FAIL_RETRY]: "Failure Retry Count",
+        [T.NO_RETRY]: "Do Not Retry",
+        [T.BLE5_PROTOCOL]: "BLE 5 Protocol",
+    },
+};
+
+export const t = (l: any, t: any) => {
+    return LANGS[l || 'en'][t];
+};

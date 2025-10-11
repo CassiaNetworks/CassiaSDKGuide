@@ -1,3 +1,4 @@
+import json
 import cassiasys
 
 from cassia_log import get_logger
@@ -40,6 +41,31 @@ BLE5_PROTOCOL_ON = "on"
 
 
 class Config:
+    FIELDS = [
+        "http_port",
+        "gateway_mac",
+        "forward_protocol",
+        "forward_raw_scan",
+        "forward_raw_notify",
+        "mqtt_host",
+        "mqtt_port",
+        "mqtt_username",
+        "mqtt_password",
+        "mqtt_topic_prefix",
+        "mqtt_qos",
+        "ble5_protocol",
+        "scan_mode",
+        "scan_chip",
+        "scan_filter_name",
+        "scan_filter_mac",
+        "scan_filter_rssi",
+        "scan_filter_duplicates",
+        "scan_report_interval",
+        "conn_chip",
+        "conn_timeout",
+        "conn_fail_retry_times",
+    ]
+
     def __init__(
         self,
         http_port: str = "60000",
@@ -97,6 +123,13 @@ class Config:
     def to_dict(self):
         return {k: v for k, v in self.__dict__.items() if k != "log"}
 
+    @classmethod
+    def from_dict(cls, data):
+        kwargs = {}
+        for field in cls.FIELDS:
+            kwargs[field] = data.get(field, "")
+        return cls(**kwargs)
+
 
 class MqttTopics:
     def __init__(
@@ -126,7 +159,20 @@ class MetaConfigManager:
 
     def __init__(self):
         self.log = get_logger(self.__class__.__name__)
-        self.config = Config()
+
+        try:
+            self.log.info("read user config start")
+            config_json = cassiasys.read_user_config()
+            self.log.info(f"read user config ok: {config_json}")
+
+            if not config_json or config_json.strip() == "":
+                self.config = Config()
+            else:
+                config = json.loads(config_json.strip())
+                self.config = Config.from_dict(config)
+        except Exception as e:
+            self.log.error(f"load user config error: {e}")
+            raise e
 
         prefix = self.config.mqtt_topic_prefix
         gateway = self.config.gateway_mac
@@ -145,6 +191,12 @@ class MetaConfigManager:
 
     def get(self) -> Config:
         return self.config
+
+    def set(self, config):
+        config_json = json.dumps(config)
+        self.log.info(f"save user config start: {config_json}")
+        cassiasys.save_user_config(config_json)
+        self.log.info(f"save user config ok")
 
     def get_scan_filter(self) -> str:
         parts = []
