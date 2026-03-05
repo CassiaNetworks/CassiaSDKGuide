@@ -208,6 +208,22 @@ From [ubuntu_XE1000.2.0.8](README.md#ubuntu_xe1000208targz)
 | urllib3 | 2.5.0 |
 | wirepas_mesh_messaging | 1.3.0rc3 |
 | yarl | 1.20.1 |
+## ubuntu_XE1000.2.2.4.tar.gz
+#### Disk/Storage usage in Gateway
+| space stat. | size (MB) |
+|--|--|
+| tarball size | 159MB |
+| total file size | 505MB |
+| used space | 666MB |
+| free space | 1577MB |
+#### OS and Tools
+| soft info | version |
+|--|--|
+| Ubuntu | 22.04.4 LTS |
+| dotnet | N/A |
+| nodejs | N/A |
+| python2 | N/A |
+| python3 | 3.10.6-1~22.04.1 |
 ## Ubuntu Container APP
 ### use bluez
 [customize bluez](bluez_dbus.md)
