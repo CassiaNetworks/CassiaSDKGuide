@@ -1,0 +1,46 @@
+{
+    "AA:BB:CC:DD:EE:01": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:02": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:03": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:04": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:05": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:06": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:07": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:08": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:09": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:0A": {
+        "priority": 2,
+        "devicetype": 50
+    },
+    "AA:BB:CC:DD:EE:0B": {
+        "priority": 2,
+        "devicetype": 50
+    }
+}
