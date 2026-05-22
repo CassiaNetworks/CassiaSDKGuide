@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="App management configuration screenshot placeholder">
+  <rect width="1200" height="520" fill="#f7f8fa"/>
+  <rect x="60" y="48" width="1080" height="424" rx="18" fill="#ffffff" stroke="#d9dde3"/>
+  <text x="110" y="110" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#2f80ed">App Configuration</text>
+  <text x="110" y="168" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#333333">omron 1.1 Config</text>
+  <text x="110" y="224" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#333333">upload_channel</text>
+  <rect x="330" y="190" width="700" height="56" rx="4" fill="#eeeeee" stroke="#d5d8de"/>
+  <text x="352" y="226" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#555555">HTTP(s), MQTT(s), both, or none</text>
+  <text x="110" y="300" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#333333">server_host / mqtt_url / mqtt_topic</text>
+  <rect x="330" y="266" width="700" height="56" rx="4" fill="#eeeeee" stroke="#d5d8de"/>
+  <text x="500" y="302" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#667085">Replace with configuration screenshot</text>
+  <rect x="110" y="374" width="160" height="58" rx="6" fill="#2f80ed"/>
+  <text x="158" y="412" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Apply</text>
+</svg>

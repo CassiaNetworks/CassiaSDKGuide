@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="App management upload screenshot placeholder">
+  <rect width="1200" height="520" fill="#f7f8fa"/>
+  <rect x="60" y="48" width="1080" height="424" rx="18" fill="#ffffff" stroke="#d9dde3"/>
+  <text x="110" y="110" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#2f80ed">App Management</text>
+  <text x="110" y="166" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#333333">Upload Package</text>
+  <rect x="110" y="198" width="320" height="64" rx="6" fill="#2f80ed"/>
+  <text x="190" y="239" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Select file</text>
+  <rect x="110" y="296" width="180" height="64" rx="6" fill="#5ec84d"/>
+  <text x="155" y="337" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Upload</text>
+  <rect x="520" y="190" width="520" height="150" rx="8" fill="#f0f2f5" stroke="#d0d5dd" stroke-dasharray="10 8"/>
+  <text x="650" y="274" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#667085">Replace with upload screenshot</text>
+</svg>

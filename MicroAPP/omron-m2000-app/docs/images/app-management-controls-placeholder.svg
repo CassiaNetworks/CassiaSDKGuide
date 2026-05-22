@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="App management runtime controls screenshot placeholder">
+  <rect width="1200" height="520" fill="#f7f8fa"/>
+  <rect x="60" y="48" width="1080" height="424" rx="18" fill="#ffffff" stroke="#d9dde3"/>
+  <text x="110" y="110" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#2f80ed">Runtime Controls</text>
+  <text x="110" y="176" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#333333">Run at Startup</text>
+  <rect x="110" y="202" width="900" height="60" rx="4" fill="#eeeeee" stroke="#d5d8de"/>
+  <text x="132" y="240" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#555555">No</text>
+  <rect x="110" y="320" width="140" height="58" rx="6" fill="#a7ccf9"/>
+  <text x="154" y="358" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Start</text>
+  <rect x="280" y="320" width="140" height="58" rx="6" fill="#2f80ed"/>
+  <text x="327" y="358" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Stop</text>
+  <rect x="450" y="320" width="150" height="58" rx="6" fill="#2f80ed"/>
+  <text x="488" y="358" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Delete</text>
+  <rect x="630" y="320" width="190" height="58" rx="6" fill="#2f80ed"/>
+  <text x="678" y="358" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">View Log</text>
+  <rect x="870" y="300" width="220" height="98" rx="8" fill="#f0f2f5" stroke="#d0d5dd" stroke-dasharray="10 8"/>
+  <text x="902" y="356" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#667085">Replace screenshot</text>
+</svg>

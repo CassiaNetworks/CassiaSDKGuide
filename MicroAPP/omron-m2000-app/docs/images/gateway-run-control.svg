@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="Cassia gateway app apply startup and run control screen">
+  <rect width="1200" height="420" fill="#f7f8fa"/>
+  <rect x="32" y="28" width="1136" height="360" rx="20" fill="#ffffff" stroke="#d9dde3"/>
+  <rect x="96" y="60" width="1008" height="70" rx="4" fill="#eeeeee" stroke="#d5d8de"/>
+  <rect x="96" y="158" width="160" height="56" rx="6" fill="#2f80ed"/>
+  <text x="143" y="194" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Apply</text>
+  <text x="96" y="260" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#222222">Run at Startup</text>
+  <rect x="96" y="286" width="1008" height="56" rx="4" fill="#eeeeee" stroke="#d5d8de"/>
+  <text x="116" y="322" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#555555">No</text>
+  <path d="M1082 310 l8 8 l8 -8" fill="none" stroke="#333333" stroke-width="2"/>
+  <rect x="96" y="360" width="110" height="44" rx="6" fill="#a7ccf9"/>
+  <text x="124" y="389" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Start</text>
+  <rect x="230" y="360" width="110" height="44" rx="6" fill="#2f80ed"/>
+  <text x="262" y="389" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Stop</text>
+  <rect x="364" y="360" width="120" height="44" rx="6" fill="#2f80ed"/>
+  <text x="393" y="389" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Delete</text>
+  <rect x="508" y="360" width="160" height="44" rx="6" fill="#2f80ed"/>
+  <text x="548" y="389" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff">View Log</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="Cassia gateway micro app upload and configuration screen">
+  <rect width="1200" height="420" fill="#f7f8fa"/>
+  <rect x="32" y="28" width="1136" height="360" rx="20" fill="#ffffff" stroke="#d9dde3"/>
+  <text x="110" y="88" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#2f80ed">Micro APP</text>
+  <circle cx="292" cy="75" r="14" fill="#b6b8bc"/>
+  <text x="285" y="86" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">?</text>
+  <rect x="110" y="122" width="210" height="56" rx="6" fill="#2f80ed"/>
+  <text x="163" y="158" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Select file</text>
+  <rect x="110" y="204" width="120" height="56" rx="6" fill="#5ec84d"/>
+  <text x="135" y="240" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Upload</text>
+  <text x="110" y="312" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#222222">omron 1.1 Config</text>
+  <text x="110" y="352" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#333333">upload_channel</text>
+  <rect x="360" y="318" width="620" height="48" rx="4" fill="#eeeeee" stroke="#d5d8de"/>
+  <text x="382" y="350" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#333333">HTTP(s), MQTT(s), both, or none</text>
+</svg>

@@ -1,0 +1,42 @@
+{
+	"name": "omron",
+	"version": "1.2",
+	"config_items": [
+		{
+			"name": "upload_channel",
+			"type": "select",
+			"require": false,
+			"options": {
+				"MQTT": "mqtt",
+				"HTTP(s)": "http",
+				"HTTP(s) and MQTT(s)": "both",
+				"None": "none"
+			}
+		},
+		{ "name": "server_host", "type": "string", "require": false },
+		{ "name": "connect_timeout_ms", "type": "string", "require": false },
+		{ "name": "op_timeout_sec", "type": "string", "require": false },
+		{ "name": "data_idle_timeout_sec", "type": "string", "require": false },
+		{ "name": "connect_retry_count", "type": "string", "require": false },
+		{ "name": "connect_retry_delay_sec", "type": "string", "require": false },
+		{ "name": "device_cooldown_sec", "type": "string", "require": false },
+		{
+			"name": "current_time_timezone_offset_min",
+			"type": "string",
+			"require": false
+		},
+		{ "name": "mqtt_url", "type": "string", "require": false },
+		{ "name": "mqtt_topic", "type": "string", "require": false },
+		{ "name": "mqtt_qos", "type": "string", "require": false },
+		{ "name": "mqtt_publish_retry_count", "type": "string", "require": false },
+		{
+			"name": "mqtt_publish_retry_delay_sec",
+			"type": "string",
+			"require": false
+		},
+		{ "name": "mqtt_ca", "type": "string", "require": false },
+		{ "name": "mqtt_cert", "type": "string", "require": false },
+		{ "name": "mqtt_key", "type": "string", "require": false },
+		{ "name": "mqtt_key_pass", "type": "string", "require": false }
+	]
+}
