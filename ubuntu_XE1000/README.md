@@ -156,7 +156,7 @@ From [ubuntu_XE1000.2.0.8](README.md#ubuntu_xe1000208targz)
 | python3-pip | 22.0.2+dfsg-1ubuntu0.5 | 23MB | dpkg -P python3-wheel python3-setuptools python3-pip<br>dpkg -P python3-pkg-resources ca-certificates<br>dpkg -P python3-distutils python3-lib2to3 |
 | rinetd | 0.62.1sam-1.1 | N/A | N/A |
 | unzip | 6.0-26ubuntu3.2 | N/A | N/A |
-## ubuntu_XE1000.2.2.2.tar.gz(1.22.x)
+## ubuntu_XE1000.1.0.0.tar.gz(1.22.9)
 #### Disk/Storage usage in Gateway
 | space stat. | size (MB) |
 |--|--|
