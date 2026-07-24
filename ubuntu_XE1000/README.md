@@ -224,6 +224,19 @@ From [ubuntu_XE1000.2.0.8](README.md#ubuntu_xe1000208targz)
 | nodejs | N/A |
 | python2 | N/A |
 | python3 | 3.10.6-1~22.04.1 |
+## ubuntu_XE1000.2.4.0.tar.gz
+#### Disk/Storage usage in Gateway
+| space stat. | size (MB) |
+|--|--|
+| tarball size | 218MB |
+| total file size | 554MB |
+| used space | 772MB |
+| free space | 1424MB |
+#### OS and Tools
+| soft info | version |
+|--|--|
+| Ubuntu | Ubuntu 24.04.4 LTS |
+| python3 | 3.12.3-0ubuntu2.1 |
 ## Ubuntu Container APP
 ### use bluez
 [customize bluez](bluez_dbus.md)
